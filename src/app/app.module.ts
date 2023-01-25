@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +12,11 @@ import { ChangeComponent } from './components/change/change.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SplashComponent } from './components/splash/splash.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,13 +28,19 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ChangeComponent,
     ProfileComponent,
     HistoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    SignupComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
