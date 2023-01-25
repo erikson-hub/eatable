@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SplashComponent } from './components/splash/splash.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,15 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
