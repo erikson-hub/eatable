@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="../../../assets/images/logo.png" alt="logo" />
+      </div>
+      <ul class="navigation">
+        <li><a href="#">Login</a></li>
+        <li><a href="#" class="active">Sign-up</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <form [formGroup]="loginForm">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          placeholder="my_mail@mail.com"
+        />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" formControlName="password" />
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <button class="btn-submit big-button" type="submit" (click)="onSubmit()">
+        Sign up
+      </button>
+    </div>
+  </div>
+</div>
