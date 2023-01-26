@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl('mari@mail.com'),
-    password: new FormControl('mari'),
+    password: new FormControl('maribella'),
   });
 
   constructor(private authService: AuthService) {}
