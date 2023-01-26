@@ -1,5 +1,8 @@
-<!-- <app-splash></app-splash> -->
-<router-outlet></router-outlet>
-<!-- <app-food></app-food> -->
-
-<app-navbar *ngIf="authService.isLogged()"></app-navbar>
+<div *ngIf="!authService.isLogged()">
+    <app-splash></app-splash>
+    <app-login></app-login>
+</div>
+<div *ngIf="authService.isLogged()">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+</div>
