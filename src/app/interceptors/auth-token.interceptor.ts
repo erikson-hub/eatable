@@ -19,7 +19,7 @@ export class AuthTokenInterceptor implements HttpInterceptor {
 
     if (token) {
       const authReq = request.clone({
-        headers: request.headers.set('Authorization', `Token token=${token}`),
+        headers: request.headers.set('Authorization', token),
       });
 
       return next.handle(authReq);
