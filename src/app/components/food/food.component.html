@@ -27,8 +27,15 @@
       earum magnam eaque a, recusandae veniam ex quod necessitatibus ullam ipsum
       totam!
     </p>
-    <button class="btn-submit big-button" type="submit">Add to Cart</button>
+    <button
+      class="btn-submit big-button"
+      [ngClass]="{ added: added }"
+      (click)="addToCart()"
+      type="submit"
+    >
+      {{ buttonText }}
+    </button>
   </div>
 </div>
 
-<div class="test">NAVBAR</div>
+<app-navbar></app-navbar>
