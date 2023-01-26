@@ -377,6 +377,7 @@ button {
 .message__title {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 5.6rem;
@@ -386,6 +387,7 @@ button {
 }
 
 .message__text {
+  color: white;
   font-family: "Montserrat", sans-serif;
   line-height: 42px;
   font-size: 18px;
