@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Login } from 'src/app/models/login.model';
+
+import { Credentials } from '../../models/credentials.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,12 +12,12 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl('mari@mail.com'),
-    password: new FormControl('maribella'),
+    password: new FormControl('mari'),
   });
 
   constructor(private authService: AuthService) {}
 
   onSubmit(): void {
-    this.authService.login(<Login>this.loginForm.value);
+    this.authService.signin(<Credentials>this.loginForm.value);
   }
 }
