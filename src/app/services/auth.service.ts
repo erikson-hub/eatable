@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NewUser } from '../models/new-user.model';
 import { Profile } from '../models/profile.model';
+import { Login } from '../models/login.model';
 
 interface currentUser {
   email: string;
@@ -13,21 +14,29 @@ interface currentUser {
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUri = '';
+  private apiUri = 'http://localhost:8000/api';
 
   currentUser!: currentUser | null;
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(email: string, password: string) {
-    this.http
-      .post(`${this.apiUri}login`, { email, password })
-      .subscribe((data: any) => {
-        if (data.token) {
-          sessionStorage.setItem('token', data.token);
-          this.router.navigate(['/home']);
-        }
-      });
+  // private get _profile(): string {
+  //   return sessionStorage.getItem('id') || '';
+  // }
+  // private set _profile(id: string) {
+  //   sessionStorage.setItem('id', id);
+  // }
+
+  login(login: Login) {
+    this.http.post(`${this.apiUri}/login`, login).subscribe((data: any) => {
+      if (data.token) {
+        console.log(data);
+        sessionStorage.setItem('id', data.token);
+        sessionStorage.setItem('email', data.token);
+        sessionStorage.setItem('token', data.token);
+        // this.router.navigate(['/home']);
+      }
+    });
   }
 
   logout() {
