@@ -53,7 +53,7 @@ export class AuthService {
             if (data.token) {
                // console.log(data);
                this.user = data;
-               this.router.navigate(["/main/home"]);
+               this.router.navigate(["/"]);
             }
          });
    }
