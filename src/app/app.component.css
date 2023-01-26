@@ -1,0 +1,9 @@
+.app {
+  padding-bottom: 63px;
+}
+
+@media (min-width: 451px) {
+  .app {
+    padding-bottom: 82px;
+  }
+}
