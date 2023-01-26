@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent {
+  filtrar : boolean = false;
 
+  constructor() {    
+  }
+  
+  expandir = () => {
+    if (this.filtrar) {
+      this.filtrar = false
+    } else {
+      this.filtrar = true
+    }
+  }
 }

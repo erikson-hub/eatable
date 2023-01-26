@@ -38,9 +38,13 @@ nav ul li p {
   /* margin: 5px 0; */
 }
 nav ul li:hover .material-icons,
-nav ul li.active .material-icons {
+nav ul li a.active .material-icons {
   color: #fa4a0c;
   text-shadow: 0 0 15px #fa4a0c;
+}
+
+.nav-link {
+  color: #fa4a0c;
 }
 
 @media (max-width: 450px) {
