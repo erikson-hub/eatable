@@ -59,3 +59,8 @@ h2 {
   padding-bottom: 32px;
   background-color: #fa4a0c;
 }
+
+/* agregado al carrito  */
+.added {
+  background-color: #fa4b0c86;
+}
