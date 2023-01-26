@@ -8,9 +8,6 @@ body {
 }
 
 body {
-  margin: 0;
   background-color: #f6f6f9;
+  margin: 0;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
