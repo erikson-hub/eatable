@@ -9,4 +9,11 @@ import { Food } from 'src/app/models/food.model';
 export class FoodComponent {
   currentFood!: Food;
   foodId: string | null = null;
+  added = false;
+  buttonText = 'Add to Cart';
+
+  addToCart() {
+    this.added = !this.added;
+    this.buttonText = this.added ? 'Added to Cart' : 'Add to Cart';
+  }
 }
