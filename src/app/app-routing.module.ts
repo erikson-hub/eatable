@@ -5,6 +5,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { HistoryComponent } from "./pages/history/history.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
+import { MainComponent } from "./pages/main/main.component";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { SignupComponent } from "./pages/signup/signup.component";
@@ -24,19 +25,23 @@ const routes: Routes = [
       component: LoginComponent,
    },
    {
-      path: "home",
-      component: HomeComponent,
+      path: "main",
+      component: MainComponent,
       //canActivate: [AuthGuard],
-   },
-   {
-      path: "profile",
-      component: ProfileComponent,
-      //canActivate: [AuthGuard],
-   },
-   {
-      path: "history",
-      component: HistoryComponent,
-      //canActivate: [AuthGuard],
+      children: [
+         {
+            path: "home",
+            component: HomeComponent,
+         },
+         {
+            path: "profile",
+            component: ProfileComponent,
+         },
+         {
+            path: "history",
+            component: HistoryComponent,
+         },
+      ],
    },
    {
       path: "**",
