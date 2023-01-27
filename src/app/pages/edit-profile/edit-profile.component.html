@@ -1,0 +1,60 @@
+<div class="page">
+  <div class="content">
+    <div class="container">
+      <div class="topbar">
+        <button class="back-button">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+        <h2>My Profile</h2>
+      </div>
+
+      <h4>Update personal details</h4>
+      <div class="card-edit">
+        <form [formGroup]="loginForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              formControlName="name"
+              placeholder="Margarita"
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              formControlName="email"
+              placeholder="my_mail@mail.com"
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              formControlName="phone"
+              placeholder="987654321"
+            />
+          </div>
+          <div class="field">
+            <label for="address">Address</label>
+            <!-- <input
+              type="text"
+              name="address"
+              formControlName="address"
+              placeholder="Calle los Rosales, Urb El Jardin"
+            /> -->
+            <textarea name="address" formControlName="address"></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <button class="btn-submit big-button" type="submit">Update</button>
+    </div>
+  </div>
+</div>

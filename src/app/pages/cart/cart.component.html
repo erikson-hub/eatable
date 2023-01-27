@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="content">
+    <div class="container">
+      <div class="topbar">
+        <button class="back-button">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </button>
+        <h2>Cart</h2>
+      </div>
+      <div class="row content-prod" *ngFor="let prod of listproduct">
+        <div class="col-4 cont-img">
+          <img src="{{ prod.img }}" class="float-center img-food" alt="..." />
+        </div>
+        <div class="col-6">
+          <h3>{{ prod.name }}</h3>
+          <p class="prec-prod">S/. {{ prod.precio }}</p>
+        </div>
+        <div class="col-2 conten-btn">
+          <div class="btn-cantidad d-flex">
+            <button>-</button>
+            <p class="cant-prod">{{ prod.cantidad }}</p>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <button class="btn-submit big-button" type="submit">Checkout</button>
+    </div>
+  </div>
+</div>

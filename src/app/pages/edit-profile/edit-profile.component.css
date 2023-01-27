@@ -1,0 +1,95 @@
+:host {
+  --color-orange: #fa4a0c;
+  --color-text: #3e3e3f;
+}
+
+.container {
+  margin: auto;
+  max-width: 768px;
+  width: 92%;
+  padding: 0 16px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.back-button {
+  align-items: center;
+  background-color: #f6f6f9;
+  border: none;
+  display: flex;
+  left: -20px;
+  height: 48px;
+  justify-content: center;
+  top: 50%;
+  position: absolute;
+  width: 48px;
+  transform: translate(0px, -24px);
+}
+
+.big-button {
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: 24px;
+  color: white;
+  display: block;
+  max-width: 480px;
+  margin: auto;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.topbar {
+  margin-top: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+h2,
+h4 {
+  color: var(--color-text);
+}
+
+h4 {
+  padding: 16px 0;
+  font-weight: 500;
+}
+
+.card-edit {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.field {
+  padding-bottom: 10px;
+}
+
+.field label {
+  color: #c2c2c5;
+  font-size: 12px;
+}
+
+.field input,
+textarea {
+  border: none;
+  border-bottom: 1.5px solid var(--color-text);
+  color: var(--color-text);
+  display: block;
+  font-size: 15px;
+  padding: 4px 0;
+  outline: none;
+  width: 100%;
+}
+
+.footer {
+  height: 70px;
+  flex-shrink: 0;
+}

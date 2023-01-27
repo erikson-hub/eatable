@@ -1,1 +1,33 @@
-<p>history works!</p>
+<div class="section-history">
+    <div class="container">
+        <div class="cabecera">
+            <button><i class="material-icons">chevron_left</i></button><p>History</p>
+        </div>
+        <div class="datos">
+            <p class="date">Wed, Mar 20, 2021</p>
+            <div class="info-total">
+                <p>2 items</p>
+                <p class="price" [ngStyle]="{'color': '#fa4a0c'}">$97.90</p>
+            </div>
+            <div class="section-order" *ngIf="filtrar">
+                <p class="subtitle">Order</p>
+            <div class="order-info">
+                <p class="text">5. Veggie tomato mix</p>
+                <p class="price">$75.45</p>
+            </div>
+            <div class="order-info">
+                <p class="text">1. Fish with mix orenage..</p>
+                <p class="price">$12.45</p>
+            </div>
+                <div class="line"></div>
+                <p class="subtitle">Delivery</p>
+                <p class="text">Calle Rosales 123, urb El Jardín</p>
+            </div>
+            <div class="iconFilter" [ngClass]="filtrar ? 'rotacion' : ''" (click)="expandir()">
+            <i class="material-icons">expand_more</i>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
