@@ -1,9 +1,9 @@
 <div class="app">
-  <app-splash></app-splash>
+  <!-- <app-splash></app-splash> -->
   <div class="pages">
     <router-outlet></router-outlet>
   </div>
-  <div class="navbar">
-    <app-navbar *ngIf="authService.isLogged()"></app-navbar>
+  <div class="navbar" *ngIf="authService.isLogged()">
+    <app-navbar></app-navbar>
   </div>
 </div>
