@@ -1,0 +1,356 @@
+{
+   "foods": [
+      {
+         "id": "1",
+         "name": "Spaghetti alla Carbonara",
+         "price": 15.0,
+         "category": "Italian",
+         "description": "Spaghetti pasta with a creamy sauce made of eggs, cheese, and bacon",
+         "picture_url": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/03/Spaghetti-alla-Carbonara-1200px-Inside-the-Rustic-Kitchen-1.jpg"
+      },
+      {
+         "id": "2",
+         "name": "Pizza Margherita",
+         "price": 12.67,
+         "category": "Italian",
+         "description": "A classic pizza with tomato sauce, mozzarella cheese, and basil",
+         "picture_url": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/5802fab5-fdce-468a-a830-43e8001f5a72/Derivates/c00dc34a-e73d-42f0-a86e-e2fd967d33fe.jpg"
+      },
+      {
+         "id": "3",
+         "name": "Lasagna Bolognese",
+         "price": 17.8,
+         "category": "Italian",
+         "description": "Layers of pasta, meat sauce, and cheese, baked in the oven",
+         "picture_url": "https://i2.wp.com/smittenkitchen.com/wp-content/uploads/2012/02/lasagna-bolognese-4-scaled.jpg?fit=1200%2C800&ssl=1"
+      },
+      {
+         "id": "4",
+         "name": "Cannelloni",
+         "price": 16.5,
+         "category": "Italian",
+         "description": "Tube-shaped pasta filled with meat or spinach and ricotta, topped with tomato sauce and cheese",
+         "picture_url": "https://img-global.cpcdn.com/recipes/6f9176fe97cf9d1d/1200x630cq70/photo.jpg"
+      },
+      {
+         "id": "5",
+         "name": "Risotto alla Milanese",
+         "price": 14.25,
+         "category": "Italian",
+         "description": "Creamy rice dish cooked with saffron and Parmesan cheese",
+         "picture_url": "https://italiasquisita.net/files/chunks/54c9f3bcfb5ab97177000798/photo-max_54c9f49ffb5ab96dcc0001d9.jpg"
+      },
+      {
+         "id": "6",
+         "name": "Gnocchi al Pesto",
+         "price": 13.0,
+         "category": "Italian",
+         "description": "Potato dumplings with a green sauce made of basil, pine nuts, and Parmesan cheese",
+         "picture_url": "https://www.insidetherustickitchen.com/wp-content/uploads/2020/05/Pesto-gnocchi-1200px-Inside-the-rustic-kitchen.jpg"
+      },
+      {
+         "id": "7",
+         "name": "Taco al Pastor",
+         "price": 10.0,
+         "category": "Mexican",
+         "description": "A traditional taco filled with marinated pork, pineapple, cilantro, and onions",
+         "picture_url": "https://www.example.com/taco_al_pastor.jpg"
+      },
+      {
+         "id": "8",
+         "name": "Enchiladas",
+         "price": 12.85,
+         "category": "Mexican",
+         "description": "Corn tortillas filled with meat or cheese, topped with a red or green sauce and cheese",
+         "picture_url": "https://www.example.com/enchiladas.jpg"
+      },
+      {
+         "id": "9",
+         "name": "Chiles Rellenos",
+         "price": 14.5,
+         "category": "Mexican",
+         "description": "Stuffed poblano peppers with cheese or meat, fried and topped with tomato sauce",
+         "picture_url": "https://www.example.com/chiles_rellenos.jpg"
+      },
+      {
+         "id": "10",
+         "name": "Tamales",
+         "price": 13.2,
+         "category": "Mexican",
+         "description": "Steamed corn dough filled with meat or cheese, wrapped in a banana leaf or corn husk",
+         "picture_url": "https://www.example.com/tamales.jpg"
+      },
+      {
+         "id": "11",
+         "name": "Quesadillas",
+         "price": 12.85,
+         "category": "Mexican",
+         "description": "A folded tortilla filled with cheese and other fillings such as chicken, beef, or vegetables, grilled or fried.",
+         "picture_url": "https://www.example.com/quesadillas.jpg"
+      },
+      {
+         "id": "12",
+         "name": "Pozole",
+         "price": 15.5,
+         "category": "Mexican",
+         "description": "A traditional soup made with hominy and pork, topped with cabbage, radishes, and lime",
+         "picture_url": "https://www.example.com/pozole.jpg"
+      },
+      {
+         "id": "13",
+         "name": "Sushi",
+         "price": 20.25,
+         "category": "Japanese",
+         "description": "A dish of vinegared rice topped with raw fish or other seafood",
+         "picture_url": "https://www.example.com/sushi.jpg"
+      },
+      {
+         "id": "14",
+         "name": "Ramen",
+         "price": 15.12,
+         "category": "Japanese",
+         "description": "A hearty noodle soup made with a rich broth and various toppings such as pork, egg, and green onion",
+         "picture_url": "https://www.example.com/ramen.jpg"
+      },
+      {
+         "id": "15",
+         "name": "Tempura",
+         "price": 10.0,
+         "category": "Japanese",
+         "description": "Deep-fried seafood or vegetables coated in a light batter",
+         "picture_url": "https://www.example.com/tempura.jpg"
+      },
+      {
+         "id": "16",
+         "name": "Yakitori",
+         "price": 20.35,
+         "category": "Japanese",
+         "description": "Grilled chicken skewers marinated in a sweet soy sauce glaze",
+         "picture_url": "https://www.example.com/yakitori.jpg"
+      },
+      {
+         "id": "17",
+         "name": "Tonkatsu",
+         "price": 25.99,
+         "category": "Japanese",
+         "description": "Deep-fried breaded pork cutlet, usually served with a side of shredded cabbage",
+         "picture_url": "https://www.example.com/tonkatsu.jpg"
+      },
+      {
+         "id": "18",
+         "name": "Udon",
+         "price": 18.4,
+         "category": "Japanese",
+         "description": "A type of thick wheat noodle often served in a hot broth with various toppings such as tempura or meat",
+         "picture_url": "https://www.example.com/udon.jpg"
+      },
+      {
+         "id": "19",
+         "name": "Ceviche",
+         "price": 20.0,
+         "category": "Peruvian",
+         "description": "A dish of raw fish marinated in lime juice with onions, chili peppers, and cilantro",
+         "picture_url": "https://www.example.com/ceviche.jpg"
+      },
+      {
+         "id": "20",
+         "name": "Ají de Gallina",
+         "price": 15.15,
+         "category": "Peruvian",
+         "description": "A creamy chicken stew made with aji amarillo pepper, milk, and cheese",
+         "picture_url": "https://www.example.com/ajidegallina.jpg"
+      },
+      {
+         "id": "21",
+         "name": "Lomo Saltado",
+         "price": 25.5,
+         "category": "Peruvian",
+         "description": "A stir-fry dish made with beef, tomatoes, onions, and french fries, typically served with rice",
+         "picture_url": "https://www.example.com/lomosaltado.jpg"
+      },
+      {
+         "id": "22",
+         "name": "Papa a la Huancaína",
+         "price": 20.75,
+         "category": "Peruvian",
+         "description": "Boiled potatoes with a creamy, spicy sauce made from aji amarillo pepper, milk, and cheese",
+         "picture_url": "https://www.example.com/papahuancaina.jpg"
+      },
+      {
+         "id": "23",
+         "name": "Arroz con Pollo",
+         "price": 30.25,
+         "category": "Peruvian",
+         "description": "A dish of chicken and rice cooked with cilantro, garlic, and various spices",
+         "picture_url": "https://www.example.com/arrozconpollo.jpg"
+      },
+      {
+         "id": "24",
+         "name": "Chaufa",
+         "price": 25.0,
+         "category": "Peruvian",
+         "description": "A type of Chinese-Peruvian fried rice, often made with meat or seafood and various vegetables",
+         "picture_url": "https://www.example.com/chaufa.jpg"
+      },
+      {
+         "id": "25",
+         "name": "Popcorn",
+         "price": 10.5,
+         "category": "Snacks",
+         "description": "Popcorn is a type of corn kernel that expands and puffs up when heated. It is a popular snack food that is often enjoyed with butter and salt.",
+         "picture_url": "https://www.example.com/popcorn.jpg"
+      },
+      {
+         "id": "26",
+         "name": "Chips",
+         "price": 15.0,
+         "category": "Snacks",
+         "description": "Chips are thin slices of potatoes that have been deep fried or baked until crispy. They come in a variety of flavors such as barbecue, sour cream and onion and many others",
+         "picture_url": "https://www.example.com/chips.jpg"
+      },
+      {
+         "id": "27",
+         "name": "Pretzels",
+         "price": 20.69,
+         "category": "Snacks",
+         "description": "Pretzels are a type of baked good that are made from flour, yeast, and water. They are typically twisted into a knot shape and are often enjoyed with mustard or cheese dip.",
+         "picture_url": "https://www.example.com/pretzels.jpg"
+      },
+      {
+         "id": "28",
+         "name": "Cookies",
+         "price": 15.35,
+         "category": "Snacks",
+         "description": "Cookies are small baked goods that are made with flour, sugar, and other ingredients. They are often enjoyed with milk or coffee.",
+         "picture_url": "https://www.example.com/cookies.jpg"
+      },
+      {
+         "id": "29",
+         "name": "Crackers",
+         "price": 20.1,
+         "category": "Snacks",
+         "description": "Crackers are a type of baked good that are made with flour, water, and salt. They are often enjoyed with cheese or peanut butter.",
+         "picture_url": "https://www.example.com/crackers.jpg"
+      },
+      {
+         "id": "30",
+         "name": "Nuts",
+         "price": 25.0,
+         "category": "Snacks",
+         "description": "Nuts are a type of dry fruit that are high in protein and healthy fats. They are often enjoyed as a snack and come in many different varieties such as almonds, cashews, and walnuts.",
+         "picture_url": "https://www.example.com/nuts.jpg"
+      },
+      {
+         "id": "31",
+         "name": "Tomato Sauce",
+         "price": 10.5,
+         "category": "Sauces",
+         "description": "Tomato sauce is a type of sauce made from tomatoes, onions, garlic, and various herbs and spices. It is a versatile sauce that can be used as a base for many dishes such as pasta, pizza and lasagna.",
+         "picture_url": "https://www.example.com/tomato-sauce.jpg"
+      },
+      {
+         "id": "32",
+         "name": "BBQ Sauce",
+         "price": 15.0,
+         "category": "Sauces",
+         "description": "BBQ sauce is a type of sauce used as a marinade, baste, or topping for meat, fish and vegetables cooked in the barbecue cooking style.",
+         "picture_url": "https://www.example.com/bbq-sauce.jpg"
+      },
+      {
+         "id": "33",
+         "name": "Hot Sauce",
+         "price": 20.41,
+         "category": "Sauces",
+         "description": "Hot sauce, also known as chili sauce or pepper sauce, is a spicy sauce made from chili peppers and other ingredients such as vinegar, salt, and garlic. It is often used as a condiment or seasoning.",
+         "picture_url": "https://www.example.com/hot-sauce.jpg"
+      },
+      {
+         "id": "34",
+         "name": "Ranch Dressing",
+         "price": 25.0,
+         "category": "Sauces",
+         "description": "Ranch dressing is a type of salad dressing made from buttermilk, mayonnaise, and herbs and spices. It is a creamy, tangy dressing that is often used as a dip for vegetables or a topping for salads.",
+         "picture_url": "https://www.example.com/ranch-dressing.jpg"
+      },
+      {
+         "id": "35",
+         "name": "Chocolate cake",
+         "price": 15.0,
+         "category": "Desserts",
+         "description": "Chocolate cake is a type of cake flavored with melted chocolate, cocoa powder, or both. It is often frosted with chocolate buttercream or ganache.",
+         "picture_url": "https://www.example.com/chocolate-cake.jpg"
+      },
+      {
+         "id": "36",
+         "name": "Cheesecake",
+         "price": 20.25,
+         "category": "Desserts",
+         "description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. The crust is usually made from crushed cookies, graham crackers, or pastry.",
+         "picture_url": "https://www.example.com/cheesecake.jpg"
+      },
+      {
+         "id": "37",
+         "name": "Apple pie",
+         "price": 25.0,
+         "category": "Desserts",
+         "description": "Apple pie is a type of pie in which the main filling ingredient is apples. It is often served with ice cream, whipped cream, or cheddar cheese on top.",
+         "picture_url": "https://www.example.com/apple-pie.jpg"
+      },
+      {
+         "id": "38",
+         "name": "Ice cream",
+         "price": 15.5,
+         "category": "Desserts",
+         "description": "Ice cream is a frozen dessert made from cream, milk, and sugar, and often flavored with fruits, nuts, chocolate, or other ingredients.",
+         "picture_url": "https://www.example.com/ice-cream.jpg"
+      },
+      {
+         "id": "39",
+         "name": "Crepes",
+         "price": 30.25,
+         "category": "Desserts",
+         "description": "Crepes are a type of very thin pancakes, usually made from wheat flour, which can be filled with sweet or savory ingredients such as fruit, chocolate, cheese, ham, and eggs. They can be served as breakfast, lunch, dinner or dessert.",
+         "picture_url": "https://www.example.com/crepes.jpg"
+      },
+      {
+         "id": "40",
+         "name": "Coffee",
+         "price": 10.0,
+         "category": "Beverages",
+         "description": "Coffee is a brewed beverage made from roasted coffee beans, which are the seeds of berries from the Coffea plant. It is one of the most consumed drinks in the world and can be prepared and served in different ways.",
+         "picture_url": "https://www.example.com/coffee.jpg"
+      },
+      {
+         "id": "41",
+         "name": "Tea",
+         "price": 8.0,
+         "category": "Beverages",
+         "description": "Tea is an aromatic beverage commonly prepared by pouring hot or boiling water over cured leaves of the Camellia sinensis, an evergreen shrub native to Asia. It can also be blended with different ingredients like fruits, herbs or spices.",
+         "picture_url": "https://www.example.com/tea.jpg"
+      },
+      {
+         "id": "42",
+         "name": "Lemonade",
+         "price": 12.0,
+         "category": "Beverages",
+         "description": "Lemonade is a sweetened lemon-flavored drink. It can be made from fresh lemons, lemon juice, water, and sugar. It can also be flavored with other fruits or spices like mint, raspberry, etc.",
+         "picture_url": "https://www.example.com/lemonade.jpg"
+      },
+      {
+         "id": "43",
+         "name": "Soda",
+         "price": 8.0,
+         "category": "Beverages",
+         "description": "Soda is a sweetened, carbonated soft drink, typically containing water, a sweetener, and a flavoring agent. Some popular flavors include cola, lemon-lime, and root beer.",
+         "picture_url": "https://www.example.com/soda.jpg"
+      },
+      {
+         "id": "44",
+         "name": "Smoothie",
+         "price": 15.0,
+         "category": "Beverages",
+         "description": "Smoothie is a thick and creamy beverage made from blending fruits, vegetables, and ice. They can also be made with milk, yogurt, or ice cream to make them thicker and more nutritious.",
+         "picture_url": "https://www.example.com/smoothie.jpg"
+      }
+   ]
+}
