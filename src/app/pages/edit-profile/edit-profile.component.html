@@ -9,7 +9,7 @@
       </div>
 
       <h4>Update personal details</h4>
-      <div class="card">
+      <div class="card-edit">
         <form [formGroup]="loginForm">
           <div class="field">
             <label for="name">Name</label>
@@ -40,12 +40,13 @@
           </div>
           <div class="field">
             <label for="address">Address</label>
-            <input
+            <!-- <input
               type="text"
               name="address"
               formControlName="address"
               placeholder="Calle los Rosales, Urb El Jardin"
-            />
+            /> -->
+            <textarea name="address" formControlName="address"></textarea>
           </div>
         </form>
       </div>
