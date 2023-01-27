@@ -1,41 +1,20 @@
 <div class="main">
   <div class="container">
-    <button class="back-button">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="17"
-        height="17"
-        fill="currentColor"
-        class="bi bi-chevron-left"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-        />
-      </svg>
-    </button>
-    <div class="logo">
-      <img src="../../../assets/images/pasta_dish.jpg" alt="logo" />
+    <div class="row">
+      <div class="card">
+        <img class="card-img-top align-self-center" [src]="food.picture_url" alt="food picture" />
+        <h5 class="card-title fs-3 fw-bold mt-2 text-center">
+          {{ food.name }}
+        </h5>
+        <p class="card-text fs-3 fw-bold lh-sm mt-2 text-center">
+          ${{ food.price | number: '1.2-2' }}
+        </p>
+        <p class="fw-bold">Description</p>
+        <p>{{ food.description }}</p>
+        <button class="btn-submit big-button" [ngClass]="{ added: added }" (click)="addToCart()" type="submit">
+          {{ buttonText }}
+        </button>
+      </div>
     </div>
-    <h1 class="name">Fideos</h1>
-    <h2 class="price">$99.99</h2>
-    <h4>Description</h4>
-    <p>
-      lorem ipsum dolor sit amet, consectetur adip Lorem ipsum, dolor sit amet
-      consectetur adipisicing elit. Consectetur, hic! Perferendis nulla ratione
-      earum magnam eaque a, recusandae veniam ex quod necessitatibus ullam ipsum
-      totam!
-    </p>
-    <button
-      class="btn-submit big-button"
-      [ngClass]="{ added: added }"
-      (click)="addToCart()"
-      type="submit"
-    >
-      {{ buttonText }}
-    </button>
   </div>
 </div>
-
-<app-navbar></app-navbar>
