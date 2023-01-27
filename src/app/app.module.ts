@@ -15,7 +15,7 @@ import { HistoryComponent } from "./pages/history/history.component";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SplashComponent } from "./components/splash/splash.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthTokenInterceptor } from "./interceptors/auth-token.interceptor";
@@ -42,6 +42,7 @@ import { AuthTokenInterceptor } from "./interceptors/auth-token.interceptor";
       MatProgressSpinnerModule,
       AppRoutingModule,
       HttpClientModule,
+      FormsModule,
    ],
    providers: [
       {

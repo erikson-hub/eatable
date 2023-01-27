@@ -11,9 +11,9 @@ import { SignupComponent } from "./pages/signup/signup.component";
 
 const routes: Routes = [
    {
-      path: "",
+      path: "home",
       component: HomeComponent,
-      canActivate: [AuthGuard],
+      //canActivate: [AuthGuard],
    },
    {
       path: "signup",
@@ -22,6 +22,18 @@ const routes: Routes = [
    {
       path: "login",
       component: LoginComponent,
+   },
+   {
+      path: "home",
+      component: HomeComponent,
+   },
+   {
+      path: "home/:category",
+      component: HomeComponent,
+   },
+   {
+      path: "home/:category/:food",
+      component: HomeComponent,
    },
    {
       path: "profile",

@@ -1,0 +1,155 @@
+.search {
+   width: 70%;
+   margin: 0 auto;
+}
+input {
+   border: none;
+   background: none;
+   color: #aaa;
+   font-size: 18px;
+}
+input:focus {
+   outline: none;
+   border: none;
+   background: none;
+   color: #aaa;
+   box-shadow: none;
+}
+input::placeholder {
+   color: #bbb;
+   font-size: 16px;
+}
+.found {
+   font-size: 16px;
+   margin: 25px 0 75px 0;
+}
+.categories {
+   margin: 0 auto;
+   text-align: center;
+   margin-bottom: 75px;
+}
+.list-group {
+   display: inline-block;
+}
+.list-group-item {
+   font-size: 18px;
+   color: gray;
+   border: none;
+   border-radius: 0;
+   background-color: #f6f6f9;
+   cursor: pointer;
+}
+.list-group-item:hover {
+   color: #fa4a0c;
+}
+.active {
+   color: #fa4a0c;
+   border-bottom: 2px solid #fa4a0c;
+}
+.icon {
+   font-size: 38px;
+   padding: 10px;
+   margin-top: 12px;
+   color: #aaa;
+   background-color: #f6f6f9;
+   cursor: pointer;
+}
+.card {
+   width: 230px;
+   height: 325px;
+   border-radius: 50px;
+   box-shadow: 0 5px 11px rgba(0, 0, 0, 0.3);
+   align-items: center;
+   margin-bottom: 120px;
+   cursor: pointer;
+}
+.card-img-top {
+   border-radius: 50%;
+   transform: translate(0, -30%);
+   box-shadow: 0 25px 25px rgba(0, 0, 0, 0.3);
+}
+.card img {
+   height: 180px;
+   width: 180px;
+}
+.card-title {
+   transform: translate(0, -30%);
+   margin: 0 20px;
+   line-height: 1.5;
+}
+.card-text {
+   transform: translate(0, -30%);
+   color: #fa4a0c;
+}
+.not-found-item {
+   position: absolute;
+   top: 60%;
+   left: 38%;
+   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 992px) {
+   .search {
+      width: 80%;
+   }
+   .icon {
+      font-size: 35px;
+   }
+   .categories {
+      margin-bottom: 50px;
+   }
+   .card {
+      width: 200px;
+      height: 300px;
+      margin-bottom: 100px;
+   }
+   .card img {
+      height: 160px;
+      width: 160px;
+   }
+   .card-title {
+      margin: 0 15px;
+      font-size: 1.1rem !important;
+      line-height: 1.5 !important;
+   }
+   .card-text {
+      font-size: 1.2rem !important;
+   }
+}
+@media (max-width: 768px) {
+   .search {
+      width: 90%;
+   }
+   input {
+      font-size: 16px;
+   }
+   .icon {
+      font-size: 35px;
+   }
+   .categories {
+      margin-bottom: 30px;
+   }
+   .list-group-item {
+      font-size: 14px;
+      margin-bottom: 10px;
+   }
+   .card {
+      width: 155px;
+      height: 240px;
+      border-radius: 30px;
+      margin-bottom: 65px;
+   }
+   .card img {
+      height: 130px;
+      width: 130px;
+   }
+   .card-title {
+      margin: 0 10px;
+      font-size: 1.2rem !important;
+      line-height: 1.5 !important;
+   }
+   .card-text {
+      font-size: 1.3rem !important;
+      margin-top: 3px !important;
+   }
+}
