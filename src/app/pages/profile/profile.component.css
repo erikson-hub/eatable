@@ -32,7 +32,7 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-bottom: 12px;
 }
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 5px;
-  gap: 9.5rem;
+  gap: 6.5rem;
 }
 li a{
   text-decoration: none;
@@ -58,7 +58,7 @@ li a{
   padding-bottom: 3px;
   margin-bottom: 12px;
   text-align: left;
-  gap: 12rem;
+  gap: 9rem;
   margin-top: 45px;
 }
 .section button{
