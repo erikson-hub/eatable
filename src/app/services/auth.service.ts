@@ -1,62 +1,72 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { NewUser } from '../models/new-user.model';
-import { Profile } from '../models/profile.model';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
+import { Credentials } from "../models/credentials.model";
+import { Profile } from "../models/profile.model";
+import { Login } from "../models/login.model";
 
 interface currentUser {
-  email: string;
-  password: string;
+   email: string;
+   password: string;
 }
 
 @Injectable({
-  providedIn: 'root',
+   providedIn: "root",
 })
 export class AuthService {
-  private apiUri = '';
+   private API_URL = "http://localhost:8000/api";
 
-  currentUser!: currentUser | null;
+   get user(): any {
+      return {
+         id: sessionStorage.getItem("id"),
+         email: sessionStorage.getItem("email"),
+         token: sessionStorage.getItem("token"),
+      };
+   }
+   set user(user: any) {
+      sessionStorage.setItem("id", user.id);
+      sessionStorage.setItem("email", user.email);
+      sessionStorage.setItem("token", user.token);
+   }
 
-  constructor(private router: Router, private http: HttpClient) {}
+   constructor(private router: Router, private http: HttpClient) {}
 
-  login(email: string, password: string) {
-    this.http
-      .post(`${this.apiUri}login`, { email, password })
-      .subscribe((data: any) => {
-        if (data.token) {
-          sessionStorage.setItem('token', data.token);
-          this.router.navigate(['/home']);
-        }
-      });
-  }
+   signup(credentials: Credentials): void {
+      this.http.post(`${this.API_URL}/users`, credentials).subscribe(
+         (data: any) => {
+            // console.log(data);
+            if (data._id) {
+               alert("Te has registrado correctamente.");
+               this.signin(credentials);
+            }
+         },
+         (err) => {
+            alert("Este usuario ya existe.");
+         }
+      );
+   }
 
-  logout() {
-    sessionStorage.clear();
-    this.router.navigate(['/login']);
-  }
+   signin(credentials: Credentials): void {
+      this.http
+         .post(`${this.API_URL}/login`, credentials)
+         .subscribe((data: any) => {
+            if (data.token) {
+               // console.log(data);
+               this.user = data;
+               this.router.navigate(["/"]);
+            }
+         });
+   }
 
-  isLogged(): boolean {
-    if (sessionStorage.getItem('token')) {
-      return true;
-    }
-    return false;
-  }
+   signout() {
+      sessionStorage.clear();
+      this.router.navigate(["/login"]);
+   }
 
-  // signup(newUser: NewUser): void {
-  //   this.http.post<Profile>(`${this.apiUri}/signup`, newUser).subscribe(
-  //     (data: Profile) => {
-  //       if (data.token) {
-  //         // entramos aqui solo si
-  //         // el usuario se logeo
-  //         // correctamente.
-  //         alert('Te has registrado correctamente.');
-  //         sessionStorage.setItem('token', data.token);
-  //         this.router.navigate(['/dashboard/categories']);
-  //       }
-  //     },
-  //     (err) => {
-  //       alert('Este usuario ya existe.');
-  //     }
-  //   );
-  // }
+   isLogged(): boolean {
+      if (sessionStorage.getItem("token")) {
+         return true;
+      }
+      return false;
+   }
 }

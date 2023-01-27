@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import { Credentials } from '../../models/credentials.model';
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -12,9 +15,9 @@ export class SignupComponent {
     password: new FormControl('123456'),
   });
 
+  constructor(private authService: AuthService) {}
+
   onSubmit(): void {
-    console.log(this.loginForm.value);
-    // const { email, password } = this.loginForm.value;
-    // this.authService.login(email, password);
+    this.authService.signup(<Credentials>this.loginForm.value);
   }
 }
