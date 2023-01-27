@@ -20,6 +20,7 @@ import { SplashComponent } from './components/splash/splash.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     SignupComponent,
     SplashComponent,
     EditProfileComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

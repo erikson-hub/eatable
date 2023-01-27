@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: 'history',
     component: HistoryComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path:'cart',
+    component: CartComponent
   },
   {
     path: '**',

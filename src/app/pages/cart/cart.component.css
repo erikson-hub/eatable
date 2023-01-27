@@ -1,0 +1,90 @@
+:host {
+  --color-orange: #fa4a0c; /*#f74b22;*/
+}
+ .container{
+ margin-top: 25px;
+  /* max-width: 100vw; */
+  padding: 0 16px;
+} 
+p,h1,h2,h3{
+  font-family: "Source Sans Pro";
+}
+.prec-prod{
+  font-size:1.2rem;
+  color: var(--color-orange);
+  font-weight:600;
+}
+
+.img-food{
+  box-shadow:rgba(0, 0, 0, 0.25)  0px 25px 50px -12px;
+  width: 70px;
+  height: 80px;
+  border-radius:50px;
+  margin-top:10px;
+}
+.content-prod{
+  border-radius: 20px;
+  background-color: white;
+  margin:15px;
+
+  /*  */
+}
+.cant-prod{
+  font-size: 0.8em;
+  font-weight:700;
+}
+
+.conten-btn{
+  display:flex;
+  justify-content: end;
+  align-items: end;
+  
+}
+
+/* mat-grid-tile {
+    background: lightblue;
+    border-radius:15px;
+
+  } */
+
+  .btn-cantidad{
+    background-color:var(--color-orange);
+    color:white;
+    border-radius:15px;
+    margin-bottom:15px;
+    height:24%;
+ 
+  }
+button{
+  background-color:var(--color-orange);
+  color:white;
+   border-radius:10px; 
+  border:0px ;
+
+   /* padding:5px;  */
+
+}
+
+.big-button {
+    background-color: var(--color-orange);
+    border: none;
+    border-radius: 24px;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    padding-bottom: 32px;
+  }
+  
+  @media (min-width: 768px) {
+    .footer {
+      position: static;
+    }
+  }
+  
