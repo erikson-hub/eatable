@@ -1,39 +1,33 @@
 <p>profile works!</p>
 <main>
-
   <div class="header">
-      <div class="container">
-          <div>
-              <h1>My Profile</h1>
-          </div>
-        <ul class="navigation">
-          <li><a href="#">Personal details</a></li>
-          <li><a href="#">Change</a></li>
-        </ul>
+    <div class="container">
+      <div>
+        <h1>My Profile</h1>
       </div>
+      <ul class="navigation">
+        <li><a href="#">Personal details</a></li>
+        <li><a routerLink="/profile/edit">Change</a></li>
+      </ul>
+    </div>
   </div>
-      <div class="container">
-          <form>
-            <div class="field">
-              <label>Margarita Flores</label><span id="name"></span>
-            </div>
-            <div class="field">
-              <label>phone</label><span id="phone"></span>
-            </div>
-            <div class="field">
-              <label>address</label><span id="address"></span>
-            </div>
-          </form>
-          <div class="section">
-              <p>History</p><a href="">></a>
-          </div>
+  <div class="container">
+    <form>
+      <div class="field">
+        <label>Margarita Flores</label><span id="name"></span>
       </div>
+      <div class="field"><label>phone</label><span id="phone"></span></div>
+      <div class="field"><label>address</label><span id="address"></span></div>
+    </form>
+    <div class="section">
+      <p>History</p>
+      <a href="">></a>
+    </div>
+  </div>
 
   <div class="footer">
-      <div class="container">
-        <button class="btn-submit big-button" type="submit" >
-          Logout
-        </button>
-      </div>
+    <div class="container">
+      <button class="btn-submit big-button" type="submit">Logout</button>
     </div>
+  </div>
 </main>
