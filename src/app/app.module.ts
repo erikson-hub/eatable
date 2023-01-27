@@ -20,6 +20,8 @@ import { SplashComponent } from './components/splash/splash.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { FoodsComponent } from './components/foods/foods.component';
+import { CartComponent } from './pages/cart/cart.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { FoodsComponent } from './components/foods/foods.component';
     SignupComponent,
     SplashComponent,
     FoodsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { FoodsComponent } from './components/foods/foods.component';
     MatProgressSpinnerModule,
     AppRoutingModule,
     HttpClientModule,
+    MatGridListModule
   ],
   providers: [
     {
