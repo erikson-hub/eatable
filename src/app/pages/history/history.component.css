@@ -1,10 +1,13 @@
 .section-history {
     margin-top: 2rem;
+    font-family: "Source Sans Pro";
 }
 .container{
     margin: auto;
     max-width: 320px;
     padding: 0 16px;
+    color: #323232;
+
 }
 .cabecera{
     display: flex;
@@ -19,13 +22,14 @@
     background-color: #F6F6F9;
 }
 .cabecera p{
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: bold;
+    font-size: 17px;
     margin-right: 2rem;
+    margin-bottom: 0;
 }
 .datos{
     background-color: #fff;
-    color: #323232;
+    /* color: #323232; */
     border-radius: 12px;
     width: 90%;
     padding: 3%;
@@ -40,7 +44,7 @@
     padding: 5px 20px;
     margin-bottom: 0;
     padding-top: 5px;
-    font-size: 13px;
+    font-size: 14px;
 }
 .info-total{
     display: flex;
@@ -49,7 +53,7 @@
     width: 50%;
     padding: 0 21px;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 13px;
 }
 .price{
     text-align: end;
@@ -59,9 +63,9 @@
     padding: 0 21px;
 }
 .subtitle{
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 0;
-    font-size: 13px;
+    font-size: 14px;
 
 }
 .order-info{
@@ -73,15 +77,15 @@
     font-size: 12px;
 }
 .order-info .text{
-    width: 83%;
+    width: 86%;
 }
 .line{
     border-bottom: 2.5px solid #f1f1f1;
     margin-bottom: 12px;
 }
 .section-order .text{
-    font-size: 12px;
-    margin-bottom: 3px;
+    font-size: 13px;
+    /* margin-bottom: 3px; */
 }
 .iconFilter{
     display: flex;

@@ -1,78 +1,85 @@
-.container {
+.main{
+  margin-top: 2rem;
+}
+.container{
   margin: auto;
-  max-width: 260px;
+  max-width: 320px;
   padding: 0 16px;
 }
-form {
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.06);
-  padding: 20px;
-}
-.section {
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.06);
-  margin-top: 30px;
+.header{
   display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
 }
-.field{
-  padding: 10px 5px;
+.header button{
+  margin-left: -7rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: #F6F6F9;
 }
-
-.footer {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  padding-bottom: 32px;
+.header p{
+  font-weight: 500;
+  font-size: 15px;
+  margin-right: 2rem;
+}
+.date{
+  background-color: #fff;
+  color: #323232;
+  border-radius: 12px;
+  width: 90%;
+  padding: 3%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 12px;
 }
 .navigation{
   display: flex;
-  gap: 4px;
   justify-content: center;
+  margin-bottom: 5px;
+  gap: 6.5rem;
 }
-.navigation a{
-  color: black;
-  display: block;
-  font-weight: bold;
-  padding: 12px 34px;
+li a{
   text-decoration: none;
-  
 }
-ul{
-  list-style-type: none;
-  margin-bottom:0 ;
-  margin-right: 10px;
+.section{
+  justify-content: space-evenly;
+  background-color: #fff;
+  border-radius: 12px;
+  width: 90%;
+  padding: 3%;
   display: flex;
-  align-items: center
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  padding-bottom: 3px;
+  margin-bottom: 12px;
+  text-align: left;
+  gap: 9rem;
+  margin-top: 45px;
 }
-ul .navigation{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-h1{
-  margin: auto;
-  padding: 25px 0 10px 0;
-  width: 150px;
-  font-size: 20px;
-  text-align: center;
+.section button{
+  margin-right:0;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color:#fff;
 }
 label{
-background-color: transparent;
-border: none;
-border-bottom: 2px solid #b3b3b5;
-color: #444;
-display: block;
-font-size: 15px;
-padding: 3px 0;
-width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #eeeef7;
+  color: rgb(150, 143, 143);
+  display: block;
+  font-size: 15px;
+  padding: 3px 0;
+  width: 100%;
+
 }
+.field{
+  padding: 5px 5px;
+}
+
