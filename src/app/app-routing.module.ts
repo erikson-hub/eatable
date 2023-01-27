@@ -23,6 +23,14 @@ const routes: Routes = [
       canActivate: [AuthGuard],
    },
    {
+      path: "home/:category",
+      component: HomeComponent,
+   },
+   {
+      path: "home/:category/:food",
+      component: HomeComponent,
+   },
+   {
       path: "signup",
       component: SignupComponent,
    },

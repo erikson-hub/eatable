@@ -46,6 +46,7 @@ import { CartComponent } from "./pages/cart/cart.component";
       MatProgressSpinnerModule,
       AppRoutingModule,
       HttpClientModule,
+      FormsModule,
    ],
    providers: [
       {
