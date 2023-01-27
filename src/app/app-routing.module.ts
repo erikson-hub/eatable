@@ -25,10 +25,12 @@ const routes: Routes = [
    {
       path: "home/:category",
       component: HomeComponent,
+      canActivate: [AuthGuard],
    },
    {
       path: "home/:category/:food",
       component: HomeComponent,
+      canActivate: [AuthGuard],
    },
    {
       path: "signup",

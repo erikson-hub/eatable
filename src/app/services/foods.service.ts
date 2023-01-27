@@ -7,6 +7,7 @@ import foods_json from "./foods.json";
 })
 export class FoodsService {
    foods: Array<Food> = foods_json.foods;
+   selectedFood?: Food | any = null;
 
    constructor() {}
 
@@ -33,5 +34,13 @@ export class FoodsService {
 
    getFoodById(id: string): Food | any {
       return this.foods.find((food) => food.id === id);
+   }
+
+   setFood(food: Food) {
+      this.selectedFood = food;
+   }
+
+   getFood() {
+      return this.selectedFood;
    }
 }
