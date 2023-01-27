@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { SplashComponent } from "./components/splash/splash.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthTokenInterceptor } from "./interceptors/auth-token.interceptor";
+import { CartComponent} from "./pages/cart/cart.component"
 
 @NgModule({
    declarations: [
@@ -34,6 +35,7 @@ import { AuthTokenInterceptor } from "./interceptors/auth-token.interceptor";
       LoginComponent,
       SignupComponent,
       SplashComponent,
+      CartComponent
    ],
    imports: [
       BrowserModule,
