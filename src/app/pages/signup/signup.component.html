@@ -1,38 +1,40 @@
-<div class="main">
-  <div class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="../../../assets/images/logo.png" alt="logo" />
+<div class="layout-page">
+  <div class="layout-content">
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="../../../assets/images/logo.png" alt="logo" />
+        </div>
+        <ul class="navigation">
+          <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+          <li><a routerLink="/signup" routerLinkActive="active">Sign-up</a></li>
+        </ul>
       </div>
-      <ul class="navigation">
-        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-        <li><a routerLink="/signup" routerLinkActive="active">Sign-up</a></li>
-      </ul>
+    </div>
+
+    <div class="container">
+      <form [formGroup]="loginForm">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            name="email"
+            formControlName="email"
+            placeholder="my_mail@mail.com"
+          />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" name="password" formControlName="password" />
+        </div>
+      </form>
     </div>
   </div>
 
-  <div class="container">
-    <form [formGroup]="loginForm">
-      <div class="field">
-        <label for="email">Email address</label>
-        <input
-          type="email"
-          name="email"
-          formControlName="email"
-          placeholder="my_mail@mail.com"
-        />
-      </div>
-
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" name="password" formControlName="password" />
-      </div>
-    </form>
-  </div>
-
-  <div class="footer">
+  <div class="layout-footer">
     <div class="container">
-      <button class="btn-submit big-button" type="submit" (click)="onSubmit()">
+      <button class="big-button" type="submit" (click)="onSubmit()">
         Sign up
       </button>
     </div>
