@@ -1,36 +1,61 @@
 <div class="section-profile">
   <div class="container">
-      <div class="cabecera">
-          <button><i class="material-icons">chevron_left</i></button><p>My Profile</p>
+    <div class="cabecera">
+      <button><i class="material-icons">chevron_left</i></button>
+      <p>My Profile</p>
+    </div>
+    <div class="seccion">
+      <p class="subtitle">Personal details</p>
+      <button
+        [ngStyle]="{
+          color: '#fa4a0c',
+          'background-color': '#f6f6f9',
+          'padding-right': '2px'
+        }"
+        routerLink="/profile/edit"
+      >
+        change
+      </button>
+    </div>
+    <div class="datos-profile">
+      <div class="contenido-form">
+        <div class="contenido-datos">
+          <p class="name">{{ name }}</p>
+          <div class="inputs">
+            <input
+              type="text"
+              class="input-text"
+              id="email"
+              placeholder="my_email@mail.com"
+            />
+          </div>
+          <div class="inputs">
+            <input
+              type="text"
+              class="input-text"
+              id="phone"
+              placeholder="987654321"
+            />
+          </div>
+          <div class="inputs">
+            <input
+              type="text"
+              class="input-text lugar"
+              id="address"
+              placeholder="Calle Rosales 123, urb El Jardin"
+            />
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="seccion-history">
       <div class="seccion">
-          <p class="subtitle">Personal details </p>
-          <button [ngStyle]="{'color': '#fa4a0c', 'background-color': '#f6f6f9', 'padding-right': '2px'}">change</button>
+        <p class="text">History</p>
+        <button><i class="material-icons">chevron_right</i></button>
       </div>
-      <div class="datos-profile">
-          <div class="contenido-form">
-              <div class="contenido-datos">
-                  <p class="name">{{name}}</p>
-                  <div class="inputs">
-                      <input type="text" class="input-text" id="email" placeholder="my_email@mail.com">
-                  </div>
-                  <div class="inputs">
-                      <input type="text" class="input-text" id="phone" placeholder="987654321">
-                  </div>
-                  <div class="inputs">
-                      <input type="text" class="input-text lugar" id="address" placeholder="Calle Rosales 123, urb El Jardin">
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="seccion-history">
-          <div class="seccion">
-              <p class="text">History</p>
-              <button><i class="material-icons">chevron_right</i></button>
-          </div>
-      </div>
-      <div>
-          <button class="btn-update">Logout</button>
-      </div>
+    </div>
+    <div>
+      <button class="btn-update">Logout</button>
+    </div>
   </div>
 </div>

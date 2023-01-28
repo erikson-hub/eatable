@@ -1,13 +1,17 @@
-<div class="page">
-  <div class="content">
-    <div class="container">
+<div class="layout-page">
+  <div class="layout-header">
+    <div class="layout-container">
       <div class="topbar">
         <button class="back-button">
           <i class="material-icons">keyboard_arrow_left</i>
         </button>
         <h2>My Profile</h2>
       </div>
+    </div>
+  </div>
 
+  <div class="layout-content">
+    <div class="layout-container">
       <h4>Update personal details</h4>
       <div class="card-edit">
         <form [formGroup]="loginForm">
@@ -52,9 +56,10 @@
       </div>
     </div>
   </div>
-  <div class="footer">
-    <div class="container">
-      <button class="btn-submit big-button" type="submit">Update</button>
+
+  <div class="layout-footer">
+    <div class="layout-container">
+      <button class="big-button" type="submit">Update</button>
     </div>
   </div>
 </div>
