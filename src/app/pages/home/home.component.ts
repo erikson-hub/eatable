@@ -22,7 +22,7 @@ export class HomeComponent {
    ) {
       this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
       this.categories = this.foodsService.getCategories();
-      console.log(this.foods);
+      //console.log(this.foods);
    }
 
    ngOnInit(): void {
@@ -42,10 +42,9 @@ export class HomeComponent {
    }
 
    getFoodsBySearch(search: string) {
-      this.foods = this.foodsService.getFoodsBySearch(
-         search,
-         this.selectedCategory
-      );
+      this.foods = [
+         ...this.foodsService.getFoodsBySearch(search, this.selectedCategory),
+      ];
       this.found = this.search === "" ? 0 : this.foods.length;
    }
 
@@ -59,16 +58,20 @@ export class HomeComponent {
       if (!this.foods) {
          return;
       }
-      this.foods.find((food: Food) => {
-         if (food.id === id) {
-            this.selectedFood = food;
-         }
-      });
-      console.log(this.selectedFood);
+      this.selectedFood = this.foods.find((food: Food) => food.id === id);
+      this.foodsService.setFood(this.selectedFood);
    }
 
    clearSearch() {
       this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
+      this.selectedFood = null;
       this.search = "";
+   }
+
+   toggleSearch() {
+      const search = document.getElementById("search");
+      if (search) {
+         search.focus();
+      }
    }
 }

@@ -1,57 +1,36 @@
-<div class="main">
+<div class="section-profile">
   <div class="container">
-    <div class="header">
-      <button><i class="material-icons">chevron_left</i></button>
-      <p>My Profile</p>
-    </div>
-
-    <ul class="navigation">
-      <li><a href="#">Personal details</a></li>
-      <li><a href="#">Change</a></li>
-    </ul>
-    <div class="date">
-      <div class="field">
-        <label>Margarita Flores</label><span id="name"></span>
+      <div class="cabecera">
+          <button><i class="material-icons">chevron_left</i></button><p>My Profile</p>
       </div>
-      <div class="field"><label>phone</label><span id="phone"></span></div>
-      <div class="field"><label>address</label><span id="address"></span></div>
-    </div>
-    <div class="section">
-      <p>History</p>
-      <button><i class="material-icons">chevron_right</i></button>
-    </div>
+      <div class="seccion">
+          <p class="subtitle">Personal details </p>
+          <button [ngStyle]="{'color': '#fa4a0c', 'background-color': '#f6f6f9', 'padding-right': '2px'}">change</button>
+      </div>
+      <div class="datos-profile">
+          <div class="contenido-form">
+              <div class="contenido-datos">
+                  <p class="name">{{name}}</p>
+                  <div class="inputs">
+                      <input type="text" class="input-text" id="email" placeholder="my_email@mail.com">
+                  </div>
+                  <div class="inputs">
+                      <input type="text" class="input-text" id="phone" placeholder="987654321">
+                  </div>
+                  <div class="inputs">
+                      <input type="text" class="input-text lugar" id="address" placeholder="Calle Rosales 123, urb El Jardin">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="seccion-history">
+          <div class="seccion">
+              <p class="text">History</p>
+              <button><i class="material-icons">chevron_right</i></button>
+          </div>
+      </div>
+      <div>
+          <button class="btn-update">Logout</button>
+      </div>
   </div>
 </div>
-
-<!-- <div class="header">
-      <div class="container">
-          <div>
-              <h1>My Profile</h1>
-          </div>
-        <ul class="navigation">
-          <li><a href="#">Personal details</a></li>
-          <li><a href="#">Change</a></li>
-        </ul>
-      </div>
-  </div>
-  <div class="container">
-    <form>
-      <div class="field">
-        <label>Margarita Flores</label><span id="name"></span>
-      </div>
-      <div class="field"><label>phone</label><span id="phone"></span></div>
-      <div class="field"><label>address</label><span id="address"></span></div>
-    </form>
-    <div class="section">
-      <p>History</p>
-      <a href="">></a>
-    </div>
-  </div>
-
-  <div class="footer">
-      <div class="container">
-        <button class="btn-submit big-button" type="submit" >
-          Logout
-        </button>
-      </div>
-    </div>-->

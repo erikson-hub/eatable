@@ -5,8 +5,7 @@
 
 .container {
   margin: auto;
-  max-width: 768px;
-  width: 92%;
+  max-width: 320px;
   padding: 0 16px;
 }
 
@@ -51,15 +50,18 @@
   position: relative;
   text-align: center;
 }
-
+h2{
+  font-size: 17px;
+}
 h2,
 h4 {
   color: var(--color-text);
 }
 
 h4 {
-  padding: 16px 0;
+  padding: 12px 0;
   font-weight: 500;
+  font-size: 15.1px;
 }
 
 .card-edit {
@@ -75,6 +77,8 @@ h4 {
 .field label {
   color: #c2c2c5;
   font-size: 12px;
+  font-family: "Source Sans Pro";
+
 }
 
 .field input,
@@ -87,6 +91,7 @@ textarea {
   padding: 4px 0;
   outline: none;
   width: 100%;
+  font-family: "Source Sans Pro";
 }
 
 .footer {
