@@ -1,5 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Food } from "src/app/models/food.model";
+import { ActivatedRoute } from "@angular/router";
 import { FoodsService } from "../../services/foods.service";
 
 @Component({
@@ -7,17 +8,32 @@ import { FoodsService } from "../../services/foods.service";
    templateUrl: "./food.component.html",
    styleUrls: ["./food.component.css"],
 })
-export class FoodComponent {
-   food: Food = this.foodsService.getFood();
-   // currentFood!: Food;
-   // foodId: string | null = null;
-
-   constructor(private foodsService: FoodsService) {
-      console.log(this.food);
-   }
-
+export class FoodComponent implements OnInit {
+   food: Food | any = null;
+   category: string | any = null;
    added = false;
    buttonText = "Add to Cart";
+
+   constructor(
+      private activatedRoute: ActivatedRoute,
+      private foodsService: FoodsService
+   ) {}
+
+   ngOnInit(): void {
+      this.activatedRoute.paramMap.subscribe((paramMap) => {
+         const category = paramMap.get("category");
+         const food = paramMap.get("food");
+         if (category && food) {
+            this.category = category;
+            this.food = this.foodsService.getFood(
+               category,
+               food.split("-").join(" ")
+            );
+         } else {
+            this.food = null;
+         }
+      });
+   }
 
    addToCart() {
       this.added = !this.added;

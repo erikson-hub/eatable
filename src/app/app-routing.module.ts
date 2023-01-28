@@ -10,6 +10,7 @@ import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { ProfileComponent } from "./pages/profile/profile.component";
 import { SignupComponent } from "./pages/signup/signup.component";
 import { CartComponent } from "./pages/cart/cart.component";
+import { FoodComponent } from "./components/food/food.component";
 
 const routes: Routes = [
    {
@@ -29,7 +30,7 @@ const routes: Routes = [
    },
    {
       path: "home/:category/:food",
-      component: HomeComponent,
+      component: FoodComponent,
       canActivate: [AuthGuard],
    },
    {
