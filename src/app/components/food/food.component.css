@@ -2,11 +2,10 @@
    --color-orange: #fa4a0c; /*#f74b22;*/
 }
 .main {
-   height: 100vh;
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-bottom: 100px;
+   margin: 50px 0 100px 0;
    transform: translateY(-50px);
 }
 .container {
