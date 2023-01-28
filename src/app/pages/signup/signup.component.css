@@ -1,5 +1,5 @@
 :host {
-  --color-orange: #fa4a0c; /*#f74b22;*/
+  --color-orange: #fa4a0c;
 }
 
 .container {
@@ -62,33 +62,10 @@ label {
   margin-bottom: 4px;
 }
 
-.big-button {
-  background-color: var(--color-orange);
-  border: none;
-  border-radius: 24px;
-  color: white;
-  padding: 20px 0;
-  width: 100%;
-}
-
 form {
   margin-top: 1.2rem;
 }
 
 .field {
   padding: 22px 0;
-}
-
-.footer {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  padding-bottom: 32px;
-}
-
-@media (min-width: 768px) {
-  .footer {
-    position: static;
-  }
 }
