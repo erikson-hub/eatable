@@ -1,0 +1,113 @@
+.main{
+    margin-top: 2rem;
+  }
+  .container{
+    margin: auto;
+    max-width: 320px;
+    padding: 0 16px;
+  }
+  .header{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+  }
+  .header button{
+    margin-left: -7rem;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-color: #F6F6F9;
+  }
+  .header p{
+    font-weight: 500;
+    font-size: 15px;
+    margin-right: 2rem;
+  }
+  .date{
+    background-color: #fff;
+    color: #323232;
+    border-radius: 12px;
+    width: 90%;
+    padding: 3%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 12px;
+  }
+  .navigation{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    gap: 6.5rem;
+  }
+  li a{
+    text-decoration: none;
+  }
+  .section{
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 90%;
+    padding: 3%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 15px;
+    padding-bottom: 3px;
+    margin-bottom: 12px;
+    text-align: left;
+    gap: 9rem;
+    margin-top: 45px;
+  }
+  .section button{
+    margin-right:0;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-color:#fff;
+  }
+  label{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #eeeef7;
+    color: rgb(150, 143, 143);
+    display: block;
+    font-size: 15px;
+    padding: 3px 0;
+    width: 100%;
+  
+  }
+  .field{
+    padding: 5px 5px;
+  }
+  
+  .back-button {
+    align-items: center;
+    background-color: #f6f6f9;
+    border: none;
+    color: var(--color-text);
+    display: flex;
+    left: -20px;
+    height: 48px;
+    justify-content: center;
+    top: 50%;
+    position: absolute;
+    width: 48px;
+    transform: translate(0px, -24px);
+  }
+  
+  .topbar {
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .footer {
+      position: static;
+    }
+  }
+
+  
