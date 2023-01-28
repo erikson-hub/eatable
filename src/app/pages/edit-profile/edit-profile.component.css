@@ -9,9 +9,9 @@
   padding: 0 16px;
 }
 
-h2 {
+/* h2 {
   font-size: 17px;
-}
+} */
 
 h2,
 h4 {
@@ -27,7 +27,7 @@ h4 {
 .card-edit {
   background-color: #fff;
   border-radius: 20px;
-  padding: 15px;
+  padding: 22px;
 }
 
 .field {
