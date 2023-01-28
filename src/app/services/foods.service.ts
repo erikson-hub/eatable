@@ -7,13 +7,8 @@ import foods_json from "./foods.json";
 })
 export class FoodsService {
    foods: Array<Food> = foods_json.foods;
-   selectedFood?: Food | any = null;
 
    constructor() {}
-
-   getFoods(): Array<Food> {
-      return this.foods;
-   }
 
    getCategories(): Array<string> {
       const categories = this.foods.map((food) => food.category);
@@ -24,7 +19,7 @@ export class FoodsService {
       return this.foods.filter((food) => food.category === category);
    }
 
-   getFoodsBySearch(search: string, category: string): Array<Food> {
+   searchFoods(search: string, category: string): Array<Food> {
       return this.foods.filter(
          (food) =>
             food.name.toLowerCase().includes(search.toLowerCase()) &&
@@ -36,11 +31,9 @@ export class FoodsService {
       return this.foods.find((food) => food.id === id);
    }
 
-   setFood(food: Food) {
-      this.selectedFood = food;
-   }
-
-   getFood() {
-      return this.selectedFood;
+   getFood(category: string, name: string): Food | any {
+      return this.foods.find(
+         (food) => food.category === category && food.name === name
+      );
    }
 }
