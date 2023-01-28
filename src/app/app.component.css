@@ -8,6 +8,10 @@
   flex-grow: 1;
 }
 
+/* .pages > * {
+  height: 100%;
+} */
+
 .navbar {
   height: 63px;
   flex-shrink: 0;
