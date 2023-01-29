@@ -1,13 +1,32 @@
-<div class="page">
-  <div class="content">
-    <div class="container">
+<div class="layout-page">
+  <div class="layout-header">
+    <div class="layout-container">
       <div class="topbar">
         <button class="back-button">
           <i class="material-icons">keyboard_arrow_left</i>
         </button>
         <h2>Cart</h2>
       </div>
-      <div class="row content-prod" *ngFor="let prod of listproduct">
+    </div>
+  </div>
+
+  <div class="layout-content">
+    <div class="layout-container">
+      <div class="content-product">
+        <div class="img-food">
+          <img src="../../../assets/images/pasta_dish.jpg" alt="" />
+        </div>
+        <div>
+          <h3>Veguie Tomato mix</h3>
+          <p class="prec-prod">75.45</p>
+        </div>
+        <div class="btn-cantidad">
+          <button>-</button>
+          <p class="cant-prod">30</p>
+          <button>+</button>
+        </div>
+      </div>
+      <!-- <div class="row content-prod" *ngFor="let prod of listproduct">
         <div class="col-4 cont-img">
           <img src="{{ prod.img }}" class="float-center img-food" alt="..." />
         </div>
@@ -22,12 +41,13 @@
             <button>+</button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
-  <div class="footer">
+
+  <div class="layout-footer">
     <div class="container">
-      <button class="btn-submit big-button" type="submit">Checkout</button>
+      <button class="big-button" type="submit">Checkout</button>
     </div>
   </div>
 </div>
