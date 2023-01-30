@@ -1,6 +1,7 @@
 .search {
-   width: 70%;
+   width: 60%;
    margin: 0 auto;
+   margin-top: -10px;
 }
 input {
    border: none;
@@ -23,23 +24,22 @@ input::placeholder {
    font-size: 16px;
    margin: 25px 0 75px 0;
 }
-.categories {
-   margin: 0 auto;
-   text-align: center;
-   margin-bottom: 75px;
+.scrollmenu {
+   white-space: nowrap;
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   -ms-overflow-style: -ms-autohiding-scrollbar;
+   margin: 10px 0 65px 0;
 }
-.list-group {
+.scrollmenu a {
    display: inline-block;
-}
-.list-group-item {
-   font-size: 18px;
    color: gray;
-   border: none;
-   border-radius: 0;
-   background-color: #f6f6f9;
-   cursor: pointer;
+   text-align: center;
+   text-decoration: none;
+   padding: 0 12px 8px 12px;
+   font-size: 18px;
 }
-.list-group-item:hover {
+.scrollmenu a:hover {
    color: #fa4a0c;
 }
 .active {
@@ -94,13 +94,13 @@ input::placeholder {
    }
    .icon {
       font-size: 35px;
+      margin-bottom: 25px;
    }
-   .categories {
-      margin-bottom: 50px;
+   .scrollmenu {
+      margin: -5px 0 50px 0;
    }
-   .list-group-item {
+   .scrollmenu a {
       font-size: 16px;
-      margin-bottom: 15px;
    }
    .card {
       width: 200px;
@@ -112,12 +112,15 @@ input::placeholder {
       width: 160px;
    }
    .card-title {
-      margin: 0 15px;
-      font-size: 1.1rem !important;
+      margin: 0 10px;
+      font-size: 1.4rem !important;
       line-height: 1.5 !important;
    }
    .card-text {
-      font-size: 1.2rem !important;
+      font-size: 1.4rem !important;
+   }
+   .found {
+      margin: 10px 0 70px 0;
    }
 }
 @media (max-width: 768px) {
@@ -129,13 +132,17 @@ input::placeholder {
    }
    .icon {
       font-size: 35px;
+      margin-bottom: 15px;
    }
-   .categories {
-      margin-bottom: 30px;
+   .scrollmenu {
+      width: 95%;
+      margin: -5px 0 35px 0;
    }
-   .list-group-item {
-      font-size: 14px;
-      margin-bottom: 10px;
+   .scrollmenu a {
+      font-size: 16px;
+   }
+   .foods {
+      margin-bottom: 15px;
    }
    .card {
       width: 155px;
@@ -155,5 +162,49 @@ input::placeholder {
    .card-text {
       font-size: 1.3rem !important;
       margin-top: 3px !important;
+   }
+   .found {
+      margin: 10px 0 55px 0;
+   }
+}
+@media (max-width: 576px) {
+   .search {
+      width: 90%;
+   }
+   .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+   }
+   .scrollmenu {
+      width: 95%;
+      margin: -5px 0 35px 0;
+   }
+   .scrollmenu a {
+      font-size: 14px;
+   }
+   .foods {
+      margin-bottom: 15px;
+   }
+   .card {
+      width: 140px;
+      height: 210px;
+      border-radius: 30px;
+      margin-bottom: 50px;
+   }
+   .card img {
+      height: 110px;
+      width: 110px;
+   }
+   .card-title {
+      margin: 0 5px;
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+   }
+   .card-text {
+      font-size: 1.2rem !important;
+      margin-top: 3px !important;
+   }
+   .found {
+      margin: 10px 0 45px 0;
    }
 }

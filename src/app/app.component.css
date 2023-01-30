@@ -6,7 +6,12 @@
 
 .pages {
   flex-grow: 1;
+  overflow-y: scroll;
 }
+
+/* .pages > * {
+  height: 100%;
+} */
 
 .navbar {
   height: 63px;

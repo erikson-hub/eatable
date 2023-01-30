@@ -1,127 +1,61 @@
 :host {
-  --color-orange: #fa4a0c; /*#f74b22;*/
+  --color-orange: #fa4a0c;
   --color-text: #363636;
 }
-.container {
-  /* margin: auto;
-  max-width: 768px; */
-  width: 90%;
-  /* padding: 0 16px; */
-}
-p,
-h1,
-h2,
-h3 {
-  font-family: "Source Sans Pro";
-}
-.prec-prod {
-  font-size: 1.2rem;
-  color: var(--color-orange);
-  font-weight: 600;
-}
 
-.img-food {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  width: 70px;
-  height: 80px;
-  border-radius: 50px;
-  margin-top: 10px;
-}
-.content-prod {
-  border-radius: 20px;
+.item {
+  align-items: center;
   background-color: white;
-  margin: 15px;
-
-  /*  */
-}
-.cant-prod {
-  font-size: 0.8em;
-  font-weight: 700;
-}
-
-.conten-btn {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.04);
   display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  max-width: 320px;
+  padding: 16px;
 }
 
-/* mat-grid-tile {
-    background: lightblue;
-    border-radius:15px;
-
-  } */
-
-.btn-cantidad {
-  background-color: var(--color-orange);
-  color: white;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  height: 24%;
-}
-button {
-  background-color: var(--color-orange);
-  color: white;
-  border-radius: 10px;
-  border: 0px;
-
-  /* padding:5px;  */
-}
-
-.big-button {
-  background-color: var(--color-orange);
-  border: none;
-  border-radius: 24px;
-  color: white;
-  display: block;
-  max-width: 480px;
-  margin: auto;
-  padding: 20px 0;
+.item-details {
+  padding-left: 12px;
   width: 100%;
 }
 
-.footer {
-  /* bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  padding-bottom: 32px; */
-  height: 70px;
-  flex-shrink: 0;
+.food-picture {
+  border-radius: 50%;
+  box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+  display: block;
+  height: 50px;
+  width: 50px;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.food-name {
+  font-size: 0.8rem;
+  /* font-weight: bold; */
 }
 
-.content {
-  flex-grow: 1;
+.food-price {
+  color: var(--color-orange);
 }
 
-.back-button {
+.btn-cantidad {
   align-items: center;
-  background-color: #f6f6f9;
-  border: none;
-  color: var(--color-text);
+  background-color: var(--color-orange);
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
   display: flex;
-  left: -20px;
-  height: 48px;
   justify-content: center;
-  top: 50%;
-  position: absolute;
-  width: 48px;
-  transform: translate(0px, -24px);
+  margin-top: 28px;
+  padding: 0 4px;
 }
-
-.topbar {
-  margin-top: 2rem;
-  position: relative;
+.btn-cantidad i {
+  display: block;
+  font-size: 18px;
+}
+.btn-cantidad .quantity {
+  font-family: arial;
+  font-weight: bold;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .footer {
-    position: static;
-  }
+  width: 18px;
 }

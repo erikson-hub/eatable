@@ -8,13 +8,12 @@ import { FoodsService } from "../../services/foods.service";
    templateUrl: "./home.component.html",
    styleUrls: ["./home.component.css"],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
    foods: Array<Food> | any = null;
    categories: Array<string>;
    search: string = "";
    found: number = 0;
    selectedCategory: string = "Italian";
-   selectedFood?: Food | any = null;
 
    constructor(
       private foodsService: FoodsService,
@@ -31,40 +30,24 @@ export class HomeComponent {
          if (category) {
             this.getFoodsByCategory(category);
          }
-         const name = paramMap.get("food");
-         if (name && this.foods) {
-            const id = this.foods.find((food: Food) => {
-               return food.name === name;
-            }).id;
-            this.getFood(id);
-         }
       });
    }
 
-   getFoodsBySearch(search: string) {
+   searchFoods(search: string) {
       this.foods = [
-         ...this.foodsService.getFoodsBySearch(search, this.selectedCategory),
+         ...this.foodsService.searchFoods(search, this.selectedCategory),
       ];
       this.found = this.search === "" ? 0 : this.foods.length;
    }
 
    getFoodsByCategory(category: string) {
-      this.foods = this.foodsService.getFoodsByCategory(category);
+      this.search = "";
       this.selectedCategory = category;
-      this.found = 0;
-   }
-
-   getFood(id: string) {
-      if (!this.foods) {
-         return;
-      }
-      this.selectedFood = this.foods.find((food: Food) => food.id === id);
-      this.foodsService.setFood(this.selectedFood);
+      this.foods = this.foodsService.getFoodsByCategory(category);
    }
 
    clearSearch() {
       this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
-      this.selectedFood = null;
       this.search = "";
    }
 

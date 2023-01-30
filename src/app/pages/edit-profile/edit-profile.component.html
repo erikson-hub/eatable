@@ -1,42 +1,31 @@
-<div class="page">
-  <div class="content">
-    <div class="container">
+<div class="layout-page">
+  <div class="layout-header">
+    <div class="layout-container">
       <div class="topbar">
-        <button class="back-button">
+        <button class="back-button" routerLink="/profile">
           <i class="material-icons">keyboard_arrow_left</i>
         </button>
         <h2>My Profile</h2>
       </div>
+    </div>
+  </div>
 
+  <div class="layout-content">
+    <div class="layout-container">
       <h4>Update personal details</h4>
       <div class="card-edit">
         <form [formGroup]="loginForm">
           <div class="field">
             <label for="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              formControlName="name"
-              placeholder="Margarita"
-            />
+            <input type="text" name="name" formControlName="name" />
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              formControlName="email"
-              placeholder="my_mail@mail.com"
-            />
+            <input type="email" name="email" formControlName="email" />
           </div>
           <div class="field">
             <label for="phone">Phone</label>
-            <input
-              type="text"
-              name="phone"
-              formControlName="phone"
-              placeholder="987654321"
-            />
+            <input type="text" name="phone" formControlName="phone" />
           </div>
           <div class="field">
             <label for="address">Address</label>
@@ -52,9 +41,12 @@
       </div>
     </div>
   </div>
-  <div class="footer">
-    <div class="container">
-      <button class="btn-submit big-button" type="submit">Update</button>
+
+  <div class="layout-footer">
+    <div class="layout-container">
+      <button class="big-button" type="submit" (click)="actualizarPerfil()">
+        Update
+      </button>
     </div>
   </div>
 </div>

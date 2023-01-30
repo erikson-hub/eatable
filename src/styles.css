@@ -2,6 +2,10 @@
 @import url(./styles/reset.css);
 @import url(./styles/typography.css);
 
+:root {
+  --color-orange: #fa4a0c;
+}
+
 html,
 body {
   height: 100%;
@@ -10,4 +14,63 @@ body {
 body {
   background-color: #f6f6f9;
   margin: 0;
+}
+
+.layout-container {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 0 16px;
+}
+
+.layout-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.layout-content {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.layout-header {
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.layout-footer {
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.back-button {
+  align-items: center;
+  background-color: #f6f6f9;
+  border: none;
+  display: flex;
+  left: -20px;
+  height: 48px;
+  justify-content: center;
+  top: 50%;
+  position: absolute;
+  width: 48px;
+  transform: translate(0px, -24px);
+}
+
+.topbar {
+  margin-top: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.big-button {
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: 24px;
+  color: white;
+  display: block;
+  margin: auto;
+  max-width: 320px;
+  padding: 20px 0;
+  width: 100%;
 }

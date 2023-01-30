@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main{
     margin-top: 2rem;
   }
@@ -111,3 +112,65 @@
   }
 
   
+=======
+:host {
+  --color-orange: #fa4a0c;
+  --color-text: #3e3e3f;
+}
+
+.content-text-btn {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 600;
+}
+
+.content-text-btn h4 {
+  font-weight: bold;
+}
+
+.datos-profile {
+  color: var(--color-text);
+}
+
+.card-checkout {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.btn-change {
+  color: var(--color-orange);
+}
+
+.name,
+.address {
+  border-bottom: 1px solid #b3b3b5;
+  padding-bottom: 6px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.total {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total p {
+  font-weight: bold;
+}
+
+.total .number {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+>>>>>>> bc5916c4737f569a63c18330ed6f82ed650534f6
