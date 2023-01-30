@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  hide = true;
   loginForm = new FormGroup({
     email: new FormControl('mari@mail.com'),
     password: new FormControl('maribella'),
