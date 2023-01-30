@@ -23,10 +23,18 @@
             placeholder="my_mail@mail.com"
           />
         </div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input type="password" name="password" formControlName="password" />
-        </div>
+         <div appearance="fill">
+          <label  for="password">Password</label>
+          <div class="d-flex">
+            <input matInput [type]="hide ? 'password' : 'text'" type="password" name="password" formControlName="password" />
+            <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </div>
+         
+        </div> 
+          
+       
       </form>
     </div>
   </div>

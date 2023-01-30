@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
@@ -21,6 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,9 @@ import { CartComponent } from './pages/cart/cart.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [
     {
