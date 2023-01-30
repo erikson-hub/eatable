@@ -19,14 +19,16 @@
           <p class="btn-change" routerLink="/profile/edit">change</p>
         </div>
         <div class="card-checkout">
-          <p class="name">Nombre</p>
-          <p class="address">Direccion</p>
-          <p>Phone</p>
+          <p class="name">{{ profile.name }}</p>
+          <p class="address">{{ profile.address }}</p>
+          <p>{{ profile.phone }}</p>
         </div>
 
         <div class="total">
           <p>Total</p>
-          <p class="number">27.90</p>
+          <p class="number">
+            {{ cartService.calculateTotalPrice() | currency }}
+          </p>
         </div>
       </div>
     </div>
@@ -34,7 +36,9 @@
 
   <div class="layout-footer">
     <div class="layout-container">
-      <button class="big-button" type="submit">Complete Order</button>
+      <button class="big-button" type="submit" (click)="createOrder()">
+        Complete Order
+      </button>
     </div>
   </div>
 </div>

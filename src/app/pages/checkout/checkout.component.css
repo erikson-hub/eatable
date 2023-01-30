@@ -32,6 +32,7 @@
 
 .btn-change {
   color: var(--color-orange);
+  cursor: pointer;
 }
 
 .name,
@@ -48,6 +49,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin-top: 64px;
 }
 
 .total p {
