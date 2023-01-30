@@ -3,6 +3,11 @@
   --color-text: #363636;
 }
 
+/*.layout-content */
+.layout-container {
+  max-width: 352px;
+}
+
 .item {
   align-items: center;
   background-color: white;
@@ -12,7 +17,6 @@
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 18px;
-  max-width: 320px;
   padding: 16px;
 }
 
@@ -58,4 +62,15 @@
   font-weight: bold;
   text-align: center;
   width: 18px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+}
+
+.total .number {
+  font-weight: bold;
+  font-size: 1.1rem;
 }

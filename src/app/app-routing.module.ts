@@ -65,7 +65,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'checkout',
+    path: 'cart/checkout',
     component: CheckoutComponent,
     canActivate: [AuthGuard],
   },

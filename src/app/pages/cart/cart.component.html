@@ -12,35 +12,38 @@
 
   <div class="layout-content">
     <div class="layout-container">
-      <div class="item">
+      <div class="item" *ngFor="let item of cartService.getItems()">
         <div>
-          <img
-            class="food-picture"
-            src="../../../assets/images/pasta_dish.jpg"
-          />
+          <img class="food-picture" src="{{ item.food.picture_url }}" />
         </div>
         <div class="item-details">
-          <div class="food-name">Veggie tomato mix</div>
-          <div class="food-price">$75.45</div>
+          <div class="food-name">{{ item.food.name }}</div>
+          <div class="food-price">${{ item.food.price }}</div>
         </div>
         <div>
           <div class="btn-cantidad">
-            <div>
+            <div (click)="cartService.removeFood(item.food._id, 1)">
               <i class="material-icons">remove</i>
             </div>
-            <div class="quantity">2</div>
-            <div>
+            <div class="quantity">{{ item.quantity }}</div>
+            <div (click)="cartService.addFood(item.food._id, 1)">
               <i class="material-icons">add</i>
             </div>
           </div>
         </div>
+      </div>
+      <div class="total">
+        <p>Total</p>
+        <p class="number">{{ cartService.calculateTotalPrice() | currency }}</p>
       </div>
     </div>
   </div>
 
   <div class="layout-footer">
     <div class="container">
-      <button class="big-button" type="submit">Checkout</button>
+      <button class="big-button" type="submit" routerLink="/cart/checkout">
+        Checkout
+      </button>
     </div>
   </div>
 </div>
