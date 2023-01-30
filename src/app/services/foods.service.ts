@@ -11,7 +11,7 @@ export class FoodsService {
 
    constructor(private http: HttpClient) {
       this.getFoods();
-      console.log(this.foods);
+      //console.log(this.foods);
    }
 
    getFoods(): void {

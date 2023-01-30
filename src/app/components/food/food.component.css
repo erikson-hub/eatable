@@ -2,11 +2,7 @@
    --color-orange: #fa4a0c; /*#f74b22;*/
 }
 .main {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 80px 0 50px 0;
-   transform: translateY(-50px);
+   margin: 30px;
 }
 .container {
    margin: auto;
@@ -44,6 +40,17 @@ h2 {
    transform: translate(0, -30%);
    color: #fa4a0c;
 }
+.not-found-item {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #777;
+}
+.not-found-icon {
+   font-size: 120px;
+   color: #ccc;
+}
 .big-button {
    background-color: var(--color-orange);
    border: none;
@@ -62,7 +69,6 @@ h2 {
    padding-bottom: 32px;
    background-color: #fa4a0c;
 }
-
 /* agregado al carrito  */
 .added {
    background-color: #fa4b0c86;
@@ -84,5 +90,11 @@ h2 {
    .card img {
       height: 200px;
       width: 200px;
+   }
+   .not-found-icon {
+      font-size: 100px;
+   }
+   .not-found {
+      font-size: 1.3rem !important;
    }
 }

@@ -12,7 +12,9 @@
             </span>
             <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" id="search"
                name="search" [(ngModel)]="search" (keyup)="searchFoods(search)" />
-            <i class="material-icons icon fs-2 mt-3 mb-3">shopping_cart</i>
+            <i class="material-icons icon fs-2 mt-3 mb-3" [routerLink]="['/cart']">
+               shopping_cart
+            </i>
          </div>
          <!-- list of categories -->
          <div class="d-flex justify-content-center" *ngIf="categories?.length && search.length == 0">
@@ -50,7 +52,12 @@
          </div>
          <!-- not found -->
          <div class="not-found-item text-center" *ngIf="foods?.length == 0">
-            Pass
+            <i class="material-icons not-found-icon">
+               search
+            </i>
+            <p class="not-found fs-2 mt-4">
+               No products found
+            </p>
          </div>
       </div>
    </div>
