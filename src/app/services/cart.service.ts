@@ -16,18 +16,14 @@ interface CartItem {
   providedIn: 'root',
 })
 export class CartService {
-  constructor(private foodsService: FoodsService) {
-    this._setCart({
-      items: [],
-    });
-  }
+  constructor(private foodsService: FoodsService) {}
 
   private _setCart(cart: Cart): void {
     sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 
   private _getCart(): Cart {
-    return JSON.parse(sessionStorage.getItem('cart') || '{}');
+    return JSON.parse(sessionStorage.getItem('cart') || '{ "items": []}');
   }
 
   getItems(): CartItem[] {
@@ -37,10 +33,11 @@ export class CartService {
 
   addFood(foodId: string, quantity: number) {
     const cart = this._getCart();
+    console.log(cart);
 
     // Buscar si el producto ya
     // existe en el carrito.
-    const item = cart.items.find((item) => item.food.id === foodId);
+    const item = cart.items.find((item) => item.food._id === foodId);
 
     // Si ya existe, modificar el quantity.
     if (item) {
@@ -63,7 +60,7 @@ export class CartService {
 
     // Revisar si existe el CartItem que
     // contiene ese foodId.
-    const item = cart.items.find((item) => item.food.id === foodId);
+    const item = cart.items.find((item) => item.food._id === foodId);
     if (!item) {
       return;
     }
