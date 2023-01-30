@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
          const category = paramMap.get("category");
          if (category) {
             this.getFoodsByCategory(category);
+         } else {
+            this.getFoodsByCategory(this.selectedCategory);
          }
       });
    }
