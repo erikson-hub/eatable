@@ -1,14 +1,24 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Food } from "../models/food.model";
-import foods_json from "./foods.json";
 
 @Injectable({
    providedIn: "root",
 })
 export class FoodsService {
-   foods: Array<Food> = foods_json.foods;
+   private API_URL = "http://localhost:8000/api";
+   foods: Array<Food> = [];
 
-   constructor() {}
+   constructor(private http: HttpClient) {
+      this.getFoods();
+      console.log(this.foods);
+   }
+
+   getFoods(): void {
+      this.http.get(`${this.API_URL}/products`).subscribe((data: any) => {
+         this.foods = data;
+      });
+   }
 
    getCategories(): Array<string> {
       const categories = this.foods.map((food) => food.category);
@@ -28,7 +38,7 @@ export class FoodsService {
    }
 
    getFoodById(id: string): Food | any {
-      return this.foods.find((food) => food.id === id);
+      return this.foods.find((food) => food._id === id);
    }
 
    getFood(category: string, name: string): Food | any {
