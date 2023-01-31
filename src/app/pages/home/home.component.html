@@ -26,7 +26,7 @@
               id="search"
               name="search"
               [(ngModel)]="search"
-              (keyup)="searchFoods(search)"
+              (keyup)="searchFoods(search, getCategory())"
             />
           </div>
           <div class="cart" routerLink="/cart">
@@ -37,12 +37,11 @@
           </div>
         </div>
         <!-- menu -->
-        <div class="menu" *ngIf="categories?.length && search.length == 0">
+        <div class="menu" *ngIf="search.length == 0">
           <div class="scrollmenu">
             <a
               [routerLink]="['/home', category]"
-              [class.active]="category == selectedCategory"
-              (click)="getFoodsByCategory(category)"
+              [class.active]="category == getCategory()"
               *ngFor="let category of categories"
             >
               {{ category }}
@@ -55,7 +54,10 @@
   <div class="layout-content">
     <div class="layout-container">
       <!-- found results -->
-      <div class="found text-center fs-2" *ngIf="found > 0">
+      <div
+        class="found text-center fs-2"
+        *ngIf="search.length > 0 && found > 0"
+      >
         <div *ngIf="found == 1">
           <p>Found {{ found }} result</p>
         </div>
@@ -65,13 +67,13 @@
       </div>
 
       <!-- Foods -->
-      <div class="foods" *ngIf="foods?.length">
+      <div class="foods" *ngIf="search.length == 0 || found > 0">
         <div
           *ngFor="let food of foods"
           class="eatable-card food"
           [routerLink]="[
             '/home',
-            selectedCategory,
+            getCategory(),
             food.name.split(' ').join('-')
           ]"
         >
@@ -87,13 +89,13 @@
           <span class="food-price">{{ food.price | currency }}</span>
         </div>
       </div>
-    </div>
 
-    <!-- not found -->
-    <app-no-results
-      *ngIf="foods?.length == 0"
-      icon="search"
-      text="No products found"
-    ></app-no-results>
+      <!-- not found -->
+      <app-no-results
+        *ngIf="foods?.length == 0"
+        icon="search"
+        text="No products found"
+      ></app-no-results>
+    </div>
   </div>
 </div>

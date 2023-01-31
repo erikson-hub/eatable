@@ -60,6 +60,7 @@ export class AuthService {
 
    signout() {
       sessionStorage.clear();
+      localStorage.clear();
       this.router.navigate(["/login"]);
    }
 
