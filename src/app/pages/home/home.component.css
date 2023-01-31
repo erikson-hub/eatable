@@ -25,6 +25,7 @@
 }
 
 .cart {
+  cursor: pointer;
   position: relative;
 }
 .cart-badge {
