@@ -20,7 +20,13 @@ export class HistoryComponent {
   ) {}
 
   calculateOrderTotalPrice(items: any): number {
-    return 0;
+    let total = 0;
+
+    items.forEach((item: any) => {
+      total += item.quantity * item.food.price;
+    });
+
+    return total;
   }
 
   ngOnInit() {

@@ -19,9 +19,9 @@
           <p class="btn-change" routerLink="/profile/edit">change</p>
         </div>
         <div class="card-checkout">
-          <p class="name">{{ profile.name }}</p>
-          <p class="address">{{ profile.address }}</p>
-          <p>{{ profile.phone }}</p>
+          <p class="name" *ngIf="profile.name">{{ profile.name }}</p>
+          <p class="address" *ngIf="profile.address">{{ profile.address }}</p>
+          <p *ngIf="profile.phone">{{ profile.phone }}</p>
         </div>
 
         <div class="total">
