@@ -31,6 +31,7 @@ export class OrdersService {
         })
         .subscribe((data) => {
           alert('Se completó tu orden');
+          this.cartService.clear();
           this.router.navigate(['/history']);
         });
     });

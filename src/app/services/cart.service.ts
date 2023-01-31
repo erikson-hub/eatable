@@ -18,8 +18,8 @@ interface CartItem {
 export class CartService {
   constructor(private foodsService: FoodsService) {}
 
-  private _setCart(cart: Cart): void {
-    sessionStorage.setItem('cart', JSON.stringify(cart));
+  private _setCart(cart: Cart | null): void {
+    sessionStorage.setItem('cart', JSON.stringify(cart || { items: [] }));
   }
 
   private _getCart(): Cart {
@@ -33,7 +33,6 @@ export class CartService {
 
   addFood(foodId: string, quantity: number) {
     const cart = this._getCart();
-    console.log(cart);
 
     // Buscar si el producto ya
     // existe en el carrito.
@@ -93,5 +92,16 @@ export class CartService {
     });
 
     return total;
+  }
+
+  isInTheCart(foodId: string): boolean {
+    if (this.getItems().findIndex((item) => item.food._id === foodId) > -1) {
+      return true;
+    }
+    return false;
+  }
+
+  clear() {
+    this._setCart(null);
   }
 }

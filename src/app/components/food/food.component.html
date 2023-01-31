@@ -52,11 +52,14 @@
     <div class="layout-container">
       <button
         class="btn-submit big-button"
-        [ngClass]="{ added: added }"
-        (click)="addToCart()"
+        [ngClass]="{ added: cartService.isInTheCart(food._id) }"
+        [disabled]="cartService.isInTheCart(food._id)"
+        (click)="cartService.addFood(this.food._id, 1)"
         type="submit"
       >
-        {{ buttonText }}
+        {{
+          cartService.isInTheCart(food._id) ? "Added to Cart" : "Add to Cart"
+        }}
       </button>
     </div>
   </div>
