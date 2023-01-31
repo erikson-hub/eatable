@@ -2,35 +2,33 @@
   <div class="layout-header">
     <div class="layout-container">
       <div class="topbar">
-        <button class="back-button" routerLink="/profile">
+        <!-- <button class="back-button" routerLink="/profile">
           <i class="material-icons">keyboard_arrow_left</i>
-        </button>
+        </button> -->
         <h2>History</h2>
       </div>
     </div>
   </div>
 
   <div class="layout-content">
-    <div class="layout-container">
-      <div class="datos">
-        <p class="date">Wed, Mar 20, 2021</p>
+    <div class="layout-container" *ngIf="orders">
+      <div class="datos" *ngFor="let order of orders">
+        <p class="date">{{ order.date | date }}</p>
         <div class="info-total">
-          <p>2 items</p>
-          <p class="price" [ngStyle]="{ color: '#fa4a0c' }">$97.90</p>
+          <p>{{ order.totalItems }} items</p>
+          <p class="price" [ngStyle]="{ color: '#fa4a0c' }">
+            {{ order.totalPrice | currency }}
+          </p>
         </div>
         <div class="section-order" *ngIf="filtrar">
           <p class="subtitle">Order</p>
-          <div class="order-info">
-            <p class="text">5. Veggie tomato mix</p>
-            <p class="price">$75.45</p>
-          </div>
-          <div class="order-info">
-            <p class="text">1. Fish with mix orenage..</p>
-            <p class="price">$12.45</p>
+          <div class="order-info" *ngFor="let item of order.items">
+            <p class="text">{{ item.quantity }}. {{ item.food.name }}</p>
+            <p class="price">{{ item.totalPrice | currency }}</p>
           </div>
           <div class="line"></div>
           <p class="subtitle">Delivery</p>
-          <p class="text">Calle Rosales 123, urb El Jardín</p>
+          <p class="text">{{ order.delivery_address }}</p>
         </div>
         <div
           class="iconFilter"
