@@ -70,6 +70,10 @@ form {
   padding: 22px 0;
 }
 
+.eye {
+  border-bottom: 2px solid #b3b3b5;
+}
+
 @media (min-width: 768px) {
   .footer {
     position: static;

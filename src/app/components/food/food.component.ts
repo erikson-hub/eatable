@@ -40,7 +40,5 @@ export class FoodComponent implements OnInit {
   addToCart() {
     this.added = !this.added;
     this.buttonText = this.added ? 'Added to Cart' : 'Add to Cart';
-
-    this.cartService.addFood(this.food._id, 1);
   }
 }
