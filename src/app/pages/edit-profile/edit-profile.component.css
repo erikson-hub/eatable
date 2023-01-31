@@ -43,7 +43,7 @@ h4 {
 .field input,
 textarea {
   border: none;
-  border-bottom: 1.5px solid var(--color-text);
+  border-bottom: 1px solid var(--color-gray);
   color: var(--color-text);
   display: block;
   font-size: 15px;

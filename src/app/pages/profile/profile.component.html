@@ -29,17 +29,20 @@
       <div class="datos-profile" *ngIf="profile">
         <div class="contenido-form">
           <div class="contenido-datos">
-            <p class="name">{{ profile.name }}</p>
+            <p class="name" *ngIf="profile.name">{{ profile.name }}</p>
 
-            <div class="inputs">
+            <div class="inputs" *ngIf="profile.email">
+              <label for="email">Email</label>
               <input
                 type="text"
                 class="input-text"
                 id="email"
                 value="{{ profile.email }}"
+                *ngIf="profile.email"
               />
             </div>
-            <div class="inputs">
+            <div class="inputs" *ngIf="profile.phone">
+              <label for="phone">Phone</label>
               <input
                 type="text"
                 class="input-text"
@@ -47,7 +50,8 @@
                 value="{{ profile.phone }}"
               />
             </div>
-            <div class="inputs">
+            <div class="inputs" *ngIf="profile.address">
+              <label for="address">Address</label>
               <input
                 type="text"
                 class="input-text lugar"
@@ -60,9 +64,9 @@
       </div>
 
       <div class="seccion-history" routerLink="/history">
-        <div class="seccion">
-          <p class="text">History</p>
-          <button>
+        <div class="seccion history">
+          <div class="text">History</div>
+          <button class="btn-chevron_right">
             <i class="material-icons">chevron_right</i>
           </button>
         </div>

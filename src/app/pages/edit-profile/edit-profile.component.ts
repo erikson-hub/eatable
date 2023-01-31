@@ -24,11 +24,7 @@ export class EditProfileComponent implements OnInit {
 
   llenarPerfil() {
     this.profileService.getProfile().subscribe((profile: any) => {
-      console.log(profile);
-
-      const { name, email, phone, address } = profile;
-
-      this.loginForm.setValue({ name, email, phone, address });
+      this.loginForm.patchValue(profile);
     });
   }
 

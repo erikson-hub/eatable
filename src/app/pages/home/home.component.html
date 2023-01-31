@@ -1,64 +1,68 @@
-<div class="container mt-4">
-   <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 px-3">
-         <div class="search input-group">
-            <span>
-               <i class="material-icons icon" *ngIf="search.length == 0" (click)="toggleSearch()">
-                  search
-               </i>
-               <i class="material-icons icon" *ngIf="search.length > 0" (click)="clearSearch()">
-                  chevron_left
-               </i>
-            </span>
-            <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" id="search"
-               name="search" [(ngModel)]="search" (keyup)="searchFoods(search, getCategory())" />
-            <i class="material-icons icon fs-2 mt-3 mb-3" [routerLink]="['/cart']">
-               shopping_cart
-            </i>
-         </div>
-         <!-- list of categories -->
-         <div class="d-flex justify-content-center" *ngIf="search.length == 0">
-            <div class="scrollmenu">
-               <a [routerLink]="['/home', category]" [class.active]="category == getCategory()"
-                  *ngFor="let category of categories">
-                  {{ category }}
-               </a>
+<div class="layout-page">
+   <div class="layout-header header">
+      <div class="layout-container">
+         <div class="topbar">
+            <div style="display: flex; justify-content: space-between">
+               <div class="search">
+                  <span class="icon">
+                     <i class="material-icons" *ngIf="search.length == 0" (click)="toggleSearch()">
+                        search
+                     </i>
+                     <i class="material-icons icon" *ngIf="search.length > 0" (click)="clearSearch()">
+                        chevron_left
+                     </i>
+                  </span>
+                  <input type="text" placeholder="Search" id="search" name="search" [(ngModel)]="search"
+                     (keyup)="searchFoods(search)" />
+               </div>
+               <div class="cart" routerLink="/cart">
+                  <span class="cart-badge">{{
+                     cartService.calculateTotalQuantity()
+                     }}</span>
+                  <i class="material-icons cart-icon">shopping_cart</i>
+               </div>
             </div>
-         </div>
-         <!-- found results -->
-         <div class="found text-center fs-2" *ngIf="search.length > 0 && found > 0">
-            <div *ngIf="found == 1">
-               <p>Found {{found}} result</p>
-            </div>
-            <div *ngIf="found > 1">
-               <p>Found {{found}} results</p>
-            </div>
-         </div>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 my-4 px-5">
-         <div class="row" *ngIf="search.length == 0 || found > 0">
-            <div class="foods col-lg-4 col-md-6 col-sm-6 col-6 d-flex justify-content-center"
-               *ngFor="let food of foods">
-               <div class="card text-center" [routerLink]="['/home', getCategory(), food.name.split(' ').join('-')]">
-                  <img class="card-img-top img-fluid" [src]="food.picture_url" alt="food picture" />
-                  <h5 class="card-title fs-4 fw-bold mt-2">
-                     {{ food.name }}
-                  </h5>
-                  <p class="card-text fs-4 fw-bold lh-sm mt-2">
-                     ${{ food.price | number: '1.2-2' }}
-                  </p>
+            <!-- menu -->
+            <div class="menu" *ngIf="categories?.length && search.length == 0">
+               <div class="scrollmenu">
+                  <a [routerLink]="['/home', category]" [class.active]="category == selectedCategory"
+                     (click)="getFoodsByCategory(category)" *ngFor="let category of categories">
+                     {{ category }}
+                  </a>
                </div>
             </div>
          </div>
-         <!-- not found -->
-         <div class="not-found-item text-center" *ngIf="foods.length == 0">
-            <i class="material-icons not-found-icon">
-               search
-            </i>
-            <p class="not-found fs-2 mt-4">
-               No products found
-            </p>
+      </div>
+   </div>
+   <div class="layout-content">
+      <div class="layout-container">
+         <!-- found results -->
+         <div class="found text-center fs-2" *ngIf="found > 0">
+            <div *ngIf="found == 1">
+               <p>Found {{ found }} result</p>
+            </div>
+            <div *ngIf="found > 1">
+               <p>Found {{ found }} results</p>
+            </div>
+         </div>
+
+         <!-- Foods -->
+         <div class="foods" *ngIf="foods?.length">
+            <div *ngFor="let food of foods" class="eatable-card food" [routerLink]="[
+            '/home',
+            selectedCategory,
+            food.name.split(' ').join('-')
+          ]">
+               <div class="food-picture" [style]="{ 'background-image': 'url(' + food.picture_url + ')' }"></div>
+               <div class="food-name">
+                  {{ food.name }}
+               </div>
+               <span class="food-price">{{ food.price | currency }}</span>
+            </div>
          </div>
       </div>
+
+      <!-- not found -->
+      <app-no-results *ngIf="foods?.length == 0" icon="search" text="No products found"></app-no-results>
    </div>
 </div>

@@ -4,6 +4,7 @@
 
 :root {
   --color-orange: #fa4a0c;
+  --color-gray: #c7c7c7;
 }
 
 html,
@@ -73,4 +74,12 @@ body {
   max-width: 320px;
   padding: 20px 0;
   width: 100%;
+}
+
+.eatable-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
+  padding: 16px;
 }

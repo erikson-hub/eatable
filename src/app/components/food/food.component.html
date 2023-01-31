@@ -1,34 +1,62 @@
-<div class="main">
-   <div class="container">
-      <i class="material-icons icon" [routerLink]="['/home', category]">
-         chevron_left
-      </i>
-      <div class="row" *ngIf="food">
-         <div class="card">
-            <img class="card-img-top align-self-center" [src]="food.picture_url" alt="food picture" />
-            <h5 class="card-title fs-3 fw-bold mt-2 text-center">
-               {{ food.name }}
-            </h5>
-            <p class="card-text fs-3 fw-bold lh-sm mt-2 text-center">
-               ${{ food.price | number: '1.2-2' }}
-            </p>
-            <p class="fw-bold">Description</p>
-            <p>{{ food.description }}</p>
-            <button class="btn-submit big-button" [ngClass]="{ added: added }" (click)="addToCart()" type="submit">
-               {{ buttonText }}
-            </button>
-         </div>
+<div class="layout-page">
+  <div class="layout-header">
+    <div class="layout-container">
+      <div class="topbar">
+        <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+          <i class="material-icons icon" [routerLink]="['/home', category]">
+            chevron_left
+          </i>
+          <div class="cart" routerLink="/cart">
+            <span class="cart-badge">{{
+              cartService.calculateTotalQuantity()
+              }}</span>
+            <i class="material-icons cart-icon">shopping_cart</i>
+          </div>
+        </div>
       </div>
-      <div class="row" *ngIf="!food">
-         <!-- not found -->
-         <div class="not-found-item text-center">
-            <i class="material-icons not-found-icon">
-               search
-            </i>
-            <p class="not-found fs-2 mt-4">
-               No product found
-            </p>
-         </div>
+    </div>
+  </div>
+
+  <div class="layout-content">
+    <div class="layout-container" *ngIf="food">
+      <div class="row">
+        <div class="card">
+          <div class="card-img-top" [style]="{
+              'background-image': 'url(' + food.picture_url + ')'
+            }"></div>
+          <!--  -->
+
+          <h5 class="card-title fs-3 fw-bold mt-2 text-center">
+            {{ food.name }}
+          </h5>
+          <p class="card-text fs-3 fw-bold lh-sm mt-2 text-center">
+            ${{ food.price | number : "1.2-2" }}
+          </p>
+          <p class="fw-bold">Description</p>
+          <p>{{ food.description }}</p>
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
+
+  <div class="layout-footer">
+    <div class="layout-container">
+      <button class="btn-submit big-button" [ngClass]="{ added: cartService.isInTheCart(food._id) }"
+        [disabled]="cartService.isInTheCart(food._id)" (click)="cartService.addFood(this.food._id, 1)" type="submit">
+        {{
+        cartService.isInTheCart(food._id) ? "Added to Cart" : "Add to Cart"
+        }}
+      </button>
+    </div>
+  </div>
+  <!-- <div class="layout-container" *ngIf="!food">
+    <i class="material-icons icon" [routerLink]="['/home', category]">
+      chevron_left
+    </i>
+    <div class="row">Not found</div>
+  </div> -->
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { FoodsService } from 'src/app/services/foods.service';
 import { OrdersService } from 'src/app/services/orders.service';
 
@@ -14,7 +15,8 @@ export class HistoryComponent {
 
   constructor(
     public ordersService: OrdersService,
-    private foodsService: FoodsService
+    private foodsService: FoodsService,
+    private authService: AuthService
   ) {}
 
   calculateOrderTotalPrice(items: any): number {
@@ -23,8 +25,9 @@ export class HistoryComponent {
 
   ngOnInit() {
     this.ordersService.getOrders().subscribe((data: any) => {
-      this.orders = data.map(
-        ({ date, delivery_address, items: products }: any) => {
+      this.orders = data
+        .filter(({ user_id }: any) => user_id === this.authService.user.id)
+        .map(({ date, delivery_address, items: products }: any) => {
           const items = products.map(({ product_id, quantity }: any) => {
             const food = this.foodsService.getFoodById(product_id);
             return {
@@ -41,10 +44,7 @@ export class HistoryComponent {
             items,
             totalPrice: this.calculateOrderTotalPrice(items),
           };
-        }
-      );
-
-      console.log(this.orders);
+        });
     });
   }
 
