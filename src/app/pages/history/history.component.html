@@ -22,7 +22,9 @@
       <div class="datos" *ngFor="let order of orders">
         <p class="date">{{ order.date | date }}</p>
         <div class="info-total">
-          <p>{{ order.totalItems }} items</p>
+          <p>
+            {{ order.totalItems }} item{{ order.totalItems > 1 ? "s" : "" }}
+          </p>
           <p class="price" [ngStyle]="{ color: '#fa4a0c' }">
             {{ order.totalPrice | currency }}
           </p>
