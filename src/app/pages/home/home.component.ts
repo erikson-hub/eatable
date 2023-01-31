@@ -11,46 +11,60 @@ import { FoodsService } from "../../services/foods.service";
 })
 export class HomeComponent implements OnInit {
    foods: Array<Food> | any = null;
-   categories: Array<string>;
+   categories?: Array<string>;
    search: string = "";
    found: number = 0;
-   selectedCategory: string = "Italian";
 
    constructor(
       private foodsService: FoodsService,
       private activatedRoute: ActivatedRoute,
       public cartService: CartService
    ) {
-      this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
-      this.categories = this.foodsService.getCategories();
-      //console.log(this.foods);
+      this.foodsService.getFoods().subscribe(() => {
+         this.categories = this.foodsService.getCategories();
+         this.getFoodsByCategory(this.getCategory());
+      });
    }
 
    ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((paramMap) => {
+         // Get category from URL
          const category = paramMap.get("category");
+         let currentCategory: string;
          if (category) {
-            this.getFoodsByCategory(category);
+            currentCategory = category;
+         } else {
+            currentCategory = "Italian";
          }
+         // Page load, refresh, or category change
+         this.categories = this.foodsService.getCategories();
+         this.getFoodsByCategory(currentCategory);
       });
    }
 
-   searchFoods(search: string) {
-      this.foods = [
-         ...this.foodsService.searchFoods(search, this.selectedCategory),
-      ];
+   setCategory(category: string) {
+      localStorage.setItem("category", category);
+   }
+
+   getCategory(): string {
+      return localStorage.getItem("category") || "Italian";
+   }
+
+   searchFoods(search: string, category: string) {
+      this.foods = this.foodsService.searchFoods(search, category);
       this.found = this.search === "" ? 0 : this.foods.length;
+      this.search = search;
    }
 
    getFoodsByCategory(category: string) {
       this.search = "";
-      this.selectedCategory = category;
+      this.setCategory(category);
       this.foods = this.foodsService.getFoodsByCategory(category);
    }
 
    clearSearch() {
-      this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
-      this.search = "";
+      localStorage.removeItem("search");
+      this.getFoodsByCategory(this.getCategory());
    }
 
    toggleSearch() {
