@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import { Food } from "../models/food.model";
 
 @Injectable({
@@ -8,14 +10,17 @@ import { Food } from "../models/food.model";
 export class FoodsService {
    private API_URL = "http://localhost:8000/api";
 
-   constructor(private http: HttpClient) {
-      this.getFoods();
-   }
+   constructor(private http: HttpClient) {}
 
-   getFoods(): void {
-      this.http.get(`${this.API_URL}/products`).subscribe((foods: any) => {
-         localStorage.setItem("foods", JSON.stringify(foods));
-      });
+   getFoods(): Observable<null> {
+      return this.http.get<Array<Food>>(`${this.API_URL}/products`).pipe(
+         map((foods) => {
+            if (foods && !localStorage.getItem("foods")) {
+               localStorage.setItem("foods", JSON.stringify(foods));
+            }
+            return null;
+         })
+      );
    }
 
    foods(): Array<Food> {

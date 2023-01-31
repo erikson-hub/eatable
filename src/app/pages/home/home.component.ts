@@ -18,23 +18,25 @@ export class HomeComponent implements OnInit {
       private foodsService: FoodsService,
       private activatedRoute: ActivatedRoute
    ) {
-      if (!localStorage.getItem("category")) {
-         this.setCategory("Italian");
-      }
-      this.categories = this.foodsService.getCategories();
+      this.foodsService.getFoods().subscribe(() => {
+         this.categories = this.foodsService.getCategories();
+         this.getFoodsByCategory(this.getCategory());
+      });
    }
 
    ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((paramMap) => {
+         // Get category from URL
          const category = paramMap.get("category");
+         let currentCategory: string;
          if (category) {
-            this.foods = this.foodsService.getFoodsByCategory(category);
-            this.setCategory(category);
+            currentCategory = category;
          } else {
-            this.foods = this.foodsService.getFoodsByCategory(
-               this.getCategory()
-            );
+            currentCategory = "Italian";
          }
+         // Page load, refresh, or category change
+         this.categories = this.foodsService.getCategories();
+         this.getFoodsByCategory(currentCategory);
       });
    }
 
@@ -46,9 +48,10 @@ export class HomeComponent implements OnInit {
       return localStorage.getItem("category") || "Italian";
    }
 
-   searchFoods(search: string) {
-      this.foods = this.foodsService.searchFoods(search, this.getCategory());
+   searchFoods(search: string, category: string) {
+      this.foods = this.foodsService.searchFoods(search, category);
       this.found = this.search === "" ? 0 : this.foods.length;
+      this.search = search;
    }
 
    getFoodsByCategory(category: string) {
@@ -58,8 +61,8 @@ export class HomeComponent implements OnInit {
    }
 
    clearSearch() {
-      this.search = "";
-      this.foods = this.foodsService.getFoodsByCategory(this.getCategory());
+      localStorage.removeItem("search");
+      this.getFoodsByCategory(this.getCategory());
    }
 
    toggleSearch() {

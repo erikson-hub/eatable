@@ -11,22 +11,22 @@
                </i>
             </span>
             <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" id="search"
-               name="search" [(ngModel)]="search" (keyup)="searchFoods(search)" />
+               name="search" [(ngModel)]="search" (keyup)="searchFoods(search, getCategory())" />
             <i class="material-icons icon fs-2 mt-3 mb-3" [routerLink]="['/cart']">
                shopping_cart
             </i>
          </div>
          <!-- list of categories -->
-         <div class="d-flex justify-content-center" *ngIf="categories?.length && search.length == 0">
+         <div class="d-flex justify-content-center" *ngIf="search.length == 0">
             <div class="scrollmenu">
                <a [routerLink]="['/home', category]" [class.active]="category == getCategory()"
-                  (click)="getFoodsByCategory(category)" *ngFor="let category of categories">
+                  *ngFor="let category of categories">
                   {{ category }}
                </a>
             </div>
          </div>
          <!-- found results -->
-         <div class="found text-center fs-2" *ngIf="found > 0">
+         <div class="found text-center fs-2" *ngIf="search.length > 0 && found > 0">
             <div *ngIf="found == 1">
                <p>Found {{found}} result</p>
             </div>
@@ -36,7 +36,7 @@
          </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 my-4 px-5">
-         <div class="row" *ngIf="foods?.length">
+         <div class="row" *ngIf="search.length == 0 || found > 0">
             <div class="foods col-lg-4 col-md-6 col-sm-6 col-6 d-flex justify-content-center"
                *ngFor="let food of foods">
                <div class="card text-center" [routerLink]="['/home', getCategory(), food.name.split(' ').join('-')]">
@@ -51,7 +51,7 @@
             </div>
          </div>
          <!-- not found -->
-         <div class="not-found-item text-center" *ngIf="foods?.length == 0">
+         <div class="not-found-item text-center" *ngIf="foods.length == 0">
             <i class="material-icons not-found-icon">
                search
             </i>
