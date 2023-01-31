@@ -23,6 +23,7 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { CartComponent } from './pages/cart/cart.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { NoResultsComponent } from './components/no-results/no-results.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatButtonModule} from '@angular/material/button';
     SplashComponent,
     EditProfileComponent,
     CartComponent,
+    NoResultsComponent,
   ],
   imports: [
     BrowserModule,
