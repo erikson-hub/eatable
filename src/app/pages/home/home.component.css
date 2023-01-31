@@ -1,127 +1,127 @@
 .material-icons {
-   display: block;
+  display: block;
 }
 
 .header {
-   height: 120px;
+  height: 120px;
 }
 
 .search {
-   display: flex;
-   width: 100%;
+  display: flex;
+  width: 100%;
 }
 .search input {
-   background: transparent;
-   border: none;
-   box-shadow: none;
-   color: #aaa;
-   font-size: 16px;
-   margin-left: 8px;
-   padding: 0;
-   width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #aaa;
+  font-size: 16px;
+  margin-left: 8px;
+  padding: 0;
+  width: 100%;
 }
 .search input:focus {
-   outline: none;
+  outline: none;
 }
 
 .cart {
-   cursor: pointer;
-   position: relative;
+  cursor: pointer;
+  position: relative;
 }
 .cart-badge {
-   align-items: center;
-   background-color: var(--color-orange);
-   border-radius: 8px;
-   color: white;
-   display: flex;
-   font-size: 10px;
-   font-weight: bold;
-   height: 16px;
-   justify-content: center;
-   left: -8px;
-   min-width: 16px;
-   padding: 0 4px;
-   position: absolute;
-   top: -8px;
+  align-items: center;
+  background-color: var(--color-orange);
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  left: -8px;
+  min-width: 16px;
+  padding: 0 4px;
+  position: absolute;
+  top: -8px;
 }
 .cart-icon {
-   color: var(--color-gray);
+  color: var(--color-gray);
 }
 
 .menu {
-   display: flex;
-   justify-content: center;
-   margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
 }
 
 .found {
-   font-size: 16px;
-   margin: 25px 0 75px 0;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 .scrollmenu {
-   white-space: nowrap;
-   overflow-x: auto;
-   -webkit-overflow-scrolling: touch;
-   -ms-overflow-style: -ms-autohiding-scrollbar;
-   /* margin: 10px 0 65px 0; */
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* margin: 10px 0 65px 0; */
 }
 .scrollmenu a {
-   display: inline-block;
-   color: gray;
-   text-decoration: none;
-   padding: 6px 10px;
+  display: inline-block;
+  color: gray;
+  text-decoration: none;
+  padding: 6px 10px;
 }
 .scrollmenu a:hover,
 .scrollmenu a.active {
-   color: var(--color-orange);
+  color: var(--color-orange);
 }
 .scrollmenu a.active {
-   border-bottom: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
 }
 
 .foods {
-   display: grid;
-   column-gap: 16px;
-   grid-template-columns: 1fr 1fr;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .food {
-   margin-bottom: 0;
-   margin-top: 56px;
-   padding: 20px 10px;
-   text-align: center;
+  margin-bottom: 0;
+  margin-top: 56px;
+  padding: 20px 10px;
+  text-align: center;
 }
 .food-picture {
-   background-size: cover;
-   background-position: center;
-   border-radius: 50%;
-   box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
-   display: inline-block;
-   height: 110px;
-   margin-bottom: 18px;
-   margin-top: -60px;
-   width: 110px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  height: 110px;
+  margin-bottom: 18px;
+  margin-top: -60px;
+  width: 110px;
 }
 .food-name {
-   font-size: 18px;
-   font-weight: bold;
-   margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 .food-price {
-   color: var(--color-orange);
-   font-size: 16px;
-   font-weight: bold;
+  color: var(--color-orange);
+  font-size: 16px;
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
-   .foods {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
+  .foods {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media (min-width: 768px) {
-   .foods {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-   }
+  .foods {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

@@ -2,18 +2,20 @@
   <div class="layout-header">
     <div class="layout-container">
       <div class="topbar">
-        <div style="
+        <div
+          style="
             display: flex;
             justify-content: space-between;
             align-items: center;
-          ">
+          "
+        >
           <i class="material-icons icon" [routerLink]="['/home', category]">
             chevron_left
           </i>
           <div class="cart" routerLink="/cart">
             <span class="cart-badge">{{
               cartService.calculateTotalQuantity()
-              }}</span>
+            }}</span>
             <i class="material-icons cart-icon">shopping_cart</i>
           </div>
         </div>
@@ -25,9 +27,12 @@
     <div class="layout-container" *ngIf="food">
       <div class="row">
         <div class="card">
-          <div class="card-img-top" [style]="{
-              'background-image': 'url(' + food.picture_url + ')'
-            }"></div>
+          <div
+            class="card-img-top"
+            [style]="{
+              'background-image': 'url(\'' + food.picture_url + '\')'
+            }"
+          ></div>
           <!--  -->
 
           <h5 class="card-title fs-3 fw-bold mt-2 text-center">
@@ -45,10 +50,15 @@
 
   <div class="layout-footer">
     <div class="layout-container">
-      <button class="btn-submit big-button" [ngClass]="{ added: cartService.isInTheCart(food._id) }"
-        [disabled]="cartService.isInTheCart(food._id)" (click)="cartService.addFood(this.food._id, 1)" type="submit">
+      <button
+        class="btn-submit big-button"
+        [ngClass]="{ added: cartService.isInTheCart(food._id) }"
+        [disabled]="cartService.isInTheCart(food._id)"
+        (click)="cartService.addFood(this.food._id, 1)"
+        type="submit"
+      >
         {{
-        cartService.isInTheCart(food._id) ? "Added to Cart" : "Add to Cart"
+          cartService.isInTheCart(food._id) ? "Added to Cart" : "Add to Cart"
         }}
       </button>
     </div>
