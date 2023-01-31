@@ -78,6 +78,7 @@
 .seccion-history {
   background-color: #fff;
   border-radius: 12px;
+  cursor: pointer;
   width: 100%;
   padding: 2%;
   display: block;

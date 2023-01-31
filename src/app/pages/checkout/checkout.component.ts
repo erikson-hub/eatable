@@ -3,6 +3,7 @@ import { Profile } from 'src/app/models/profile.model';
 import { ProfileService } from 'src/app/services/profile.service';
 
 import { CartService } from 'src/app/services/cart.service';
+import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +15,8 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private profileService: ProfileService,
-    public cartService: CartService
+    public cartService: CartService,
+    public ordersService: OrdersService
   ) {}
 
   ngOnInit() {
@@ -27,5 +29,7 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-  createOrder() {}
+  createOrder() {
+    this.ordersService.createOrder();
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class EditProfileComponent implements OnInit {
     address: new FormControl(''),
   });
 
-  constructor(private profileService: ProfileService) {}
+  constructor(private profileService: ProfileService, private router: Router) {}
 
   ngOnInit() {
     this.llenarPerfil();
@@ -37,6 +38,8 @@ export class EditProfileComponent implements OnInit {
       .updateProfile(this.loginForm.value)
       .subscribe((data) => {
         console.log(data);
+        alert('Se actualizaron tus datos correctamente');
+        this.router.navigate(['/profile']);
       });
   }
 }
