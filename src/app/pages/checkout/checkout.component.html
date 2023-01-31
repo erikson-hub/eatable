@@ -2,7 +2,7 @@
   <div class="layout-header">
     <div class="layout-container">
       <div class="topbar">
-        <button class="back-button" routerLink="/profile">
+        <button class="back-button" routerLink="/cart">
           <i class="material-icons">keyboard_arrow_left</i>
         </button>
         <h2 class="title">Checkout</h2>
@@ -12,7 +12,7 @@
 
   <div class="layout-content">
     <div class="layout-container">
-      <div class="datos-profile">
+      <div class="datos-profile" *ngIf="profile">
         <h4 class="subtitle">Delivery</h4>
         <div class="content-text-btn">
           <h4>Address details</h4>
