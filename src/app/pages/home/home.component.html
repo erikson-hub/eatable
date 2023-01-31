@@ -52,6 +52,12 @@
     </div>
   </div>
   <div class="layout-content">
+    <!-- not found -->
+    <app-no-results
+      *ngIf="foods?.length == 0"
+      icon="search"
+      text="No products found"
+    ></app-no-results>
     <div class="layout-container">
       <!-- found results -->
       <div
@@ -89,13 +95,6 @@
           <span class="food-price">{{ food.price | currency }}</span>
         </div>
       </div>
-
-      <!-- not found -->
-      <app-no-results
-        *ngIf="foods?.length == 0"
-        icon="search"
-        text="No products found"
-      ></app-no-results>
     </div>
   </div>
 </div>
