@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class SignupComponent {
   hide = true;
   loginForm = new FormGroup({
-    email: new FormControl('my_mail@mail.com'),
+    email: new FormControl('mari@mail.com'),
     password: new FormControl('123456'),
   });
 
