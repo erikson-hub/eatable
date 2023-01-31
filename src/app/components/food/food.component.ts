@@ -18,7 +18,7 @@ export class FoodComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private foodsService: FoodsService,
-    private cartService: CartService
+    public cartService: CartService
   ) {}
 
   ngOnInit(): void {
