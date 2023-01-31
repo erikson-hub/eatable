@@ -10,47 +10,56 @@ import { FoodsService } from "../../services/foods.service";
 })
 export class HomeComponent implements OnInit {
    foods: Array<Food> | any = null;
-   categories: Array<string>;
+   categories?: Array<string>;
    search: string = "";
    found: number = 0;
-   selectedCategory: string = "Italian";
 
    constructor(
       private foodsService: FoodsService,
       private activatedRoute: ActivatedRoute
    ) {
-      this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
+      if (!localStorage.getItem("category")) {
+         this.setCategory("Italian");
+      }
       this.categories = this.foodsService.getCategories();
-      //console.log(this.foods);
    }
 
    ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((paramMap) => {
          const category = paramMap.get("category");
          if (category) {
-            this.getFoodsByCategory(category);
+            this.foods = this.foodsService.getFoodsByCategory(category);
+            this.setCategory(category);
          } else {
-            this.getFoodsByCategory(this.selectedCategory);
+            this.foods = this.foodsService.getFoodsByCategory(
+               this.getCategory()
+            );
          }
       });
    }
 
+   setCategory(category: string) {
+      localStorage.setItem("category", category);
+   }
+
+   getCategory(): string {
+      return localStorage.getItem("category") || "Italian";
+   }
+
    searchFoods(search: string) {
-      this.foods = [
-         ...this.foodsService.searchFoods(search, this.selectedCategory),
-      ];
+      this.foods = this.foodsService.searchFoods(search, this.getCategory());
       this.found = this.search === "" ? 0 : this.foods.length;
    }
 
    getFoodsByCategory(category: string) {
       this.search = "";
-      this.selectedCategory = category;
+      this.setCategory(category);
       this.foods = this.foodsService.getFoodsByCategory(category);
    }
 
    clearSearch() {
-      this.foods = this.foodsService.getFoodsByCategory(this.selectedCategory);
       this.search = "";
+      this.foods = this.foodsService.getFoodsByCategory(this.getCategory());
    }
 
    toggleSearch() {

@@ -19,7 +19,7 @@
          <!-- list of categories -->
          <div class="d-flex justify-content-center" *ngIf="categories?.length && search.length == 0">
             <div class="scrollmenu">
-               <a [routerLink]="['/home', category]" [class.active]="category == selectedCategory"
+               <a [routerLink]="['/home', category]" [class.active]="category == getCategory()"
                   (click)="getFoodsByCategory(category)" *ngFor="let category of categories">
                   {{ category }}
                </a>
@@ -39,7 +39,7 @@
          <div class="row" *ngIf="foods?.length">
             <div class="foods col-lg-4 col-md-6 col-sm-6 col-6 d-flex justify-content-center"
                *ngFor="let food of foods">
-               <div class="card text-center" [routerLink]="['/home', selectedCategory, food.name.split(' ').join('-')]">
+               <div class="card text-center" [routerLink]="['/home', getCategory(), food.name.split(' ').join('-')]">
                   <img class="card-img-top img-fluid" [src]="food.picture_url" alt="food picture" />
                   <h5 class="card-title fs-4 fw-bold mt-2">
                      {{ food.name }}
