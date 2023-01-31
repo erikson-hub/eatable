@@ -11,6 +11,13 @@
   </div>
 
   <div class="layout-content">
+    <!-- no results -->
+    <app-no-results
+      *ngIf="orders?.length == 0"
+      icon="event_note"
+      text="No history yet"
+    ></app-no-results>
+
     <div class="layout-container" *ngIf="orders">
       <div class="datos" *ngFor="let order of orders">
         <p class="date">{{ order.date | date }}</p>

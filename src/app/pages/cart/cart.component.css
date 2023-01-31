@@ -26,9 +26,10 @@
 }
 
 .food-picture {
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
   box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
-  display: block;
   height: 50px;
   width: 50px;
 }
@@ -64,10 +65,15 @@
   width: 18px;
 }
 
+.footer {
+  height: 120px;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
-  margin-top: 64px;
+  margin-bottom: 28px;
+  padding: 6px 0;
 }
 
 .total .number {

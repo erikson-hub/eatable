@@ -11,10 +11,22 @@
   </div>
 
   <div class="layout-content">
+    <!-- no results -->
+    <app-no-results
+      *ngIf="cartService.getItems()?.length == 0"
+      icon="shopping_cart"
+      text="No items in the cart"
+    ></app-no-results>
+
     <div class="layout-container">
       <div class="item" *ngFor="let item of cartService.getItems()">
         <div>
-          <img class="food-picture" src="{{ item.food.picture_url }}" />
+          <div
+            class="food-picture"
+            [style]="{
+              'background-image': 'url(' + item.food.picture_url + ')'
+            }"
+          ></div>
         </div>
         <div class="item-details">
           <div class="food-name">{{ item.food.name }}</div>
@@ -32,15 +44,17 @@
           </div>
         </div>
       </div>
-      <div class="total">
-        <p>Total</p>
-        <p class="number">{{ cartService.calculateTotalPrice() | currency }}</p>
-      </div>
     </div>
   </div>
 
-  <div class="layout-footer">
-    <div class="container">
+  <div class="layout-footer footer" *ngIf="cartService.getItems()?.length != 0">
+    <div class="layout-container">
+      <div class="total">
+        <span>Total</span>
+        <span class="number">{{
+          cartService.calculateTotalPrice() | currency
+        }}</span>
+      </div>
       <button class="big-button" type="submit" routerLink="/cart/checkout">
         Checkout
       </button>
