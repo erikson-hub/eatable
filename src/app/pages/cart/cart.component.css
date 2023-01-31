@@ -64,10 +64,15 @@
   width: 18px;
 }
 
+.footer {
+  height: 120px;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
-  margin-top: 64px;
+  margin-bottom: 28px;
+  padding: 6px 0;
 }
 
 .total .number {

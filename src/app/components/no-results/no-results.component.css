@@ -10,6 +10,7 @@
 }
 .no-results span {
   margin-top: -120px;
+  text-align: center;
 }
 .no-results .icon {
   color: #c7c7c7;
