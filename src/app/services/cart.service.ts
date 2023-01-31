@@ -65,8 +65,10 @@ export class CartService {
     }
 
     item.quantity -= quantity;
-    if (item.quantity < 0) {
-      item.quantity = 0;
+    if (item.quantity < 1) {
+      // item.quantity = 0;
+      const index = cart.items.findIndex((item) => item.food._id === foodId);
+      cart.items.splice(index, 1);
     }
 
     this._setCart(cart);
