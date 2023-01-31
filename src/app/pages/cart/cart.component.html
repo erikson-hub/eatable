@@ -35,7 +35,9 @@
         <div>
           <div class="btn-cantidad">
             <div (click)="cartService.removeFood(item.food._id, 1)">
-              <i class="material-icons">remove</i>
+              <i class="material-icons">
+                {{ item.quantity === 1 ? "delete_forever" : "remove" }}
+              </i>
             </div>
             <div class="quantity">{{ item.quantity }}</div>
             <div (click)="cartService.addFood(item.food._id, 1)">
