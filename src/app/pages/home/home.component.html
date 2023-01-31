@@ -30,9 +30,11 @@
             />
           </div>
           <div class="cart" routerLink="/cart">
-            <span class="cart-badge">{{
-              cartService.calculateTotalQuantity()
-            }}</span>
+            <span
+              *ngIf="cartService.calculateTotalQuantity() > 0"
+              class="cart-badge"
+              >{{ cartService.calculateTotalQuantity() }}</span
+            >
             <i class="material-icons cart-icon">shopping_cart</i>
           </div>
         </div>
