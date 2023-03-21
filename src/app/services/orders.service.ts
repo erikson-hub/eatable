@@ -29,10 +29,19 @@ export class OrdersService {
             return { product_id: item.food._id, quantity: item.quantity };
           }),
         })
-        .subscribe((data) => {
-          alert('Se completó tu orden');
-          this.cartService.clear();
-          this.router.navigate(['/history']);
+        .subscribe((data: any) => {
+          // console.log(data);
+          if (data) {
+            if (data.message?.errors) {
+              alert(
+                'No se pudo completar la orden, tu direccion es obligatoria'
+              );
+            } else {
+              alert('Se completó tu orden');
+              this.cartService.clear();
+              this.router.navigate(['/history']);
+            }
+          }
         });
     });
   }
