@@ -1,75 +1,75 @@
 :host {
-  --color-orange: #fa4a0c;
+    --color-orange: #fa4a0c;
 }
 
 .container {
-  margin: auto;
-  max-width: 260px;
-  padding: 0 16px;
+    margin: auto;
+    max-width: 280px;
+    padding: 0 16px;
 }
 
 .header {
-  background-color: white;
-  border-bottom-left-radius: 26px;
-  border-bottom-right-radius: 26px;
-  box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.06);
+    background-color: white;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+    box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.06);
 }
 
 .logo {
-  margin: auto;
-  padding: 115px 0 84px 0;
-  width: 150px;
+    margin: auto;
+    padding: 70px 0 70px 0;
+    width: 150px;
 }
 
 .logo img {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .navigation {
-  display: flex;
-  gap: 4px;
-  justify-content: center;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
 }
 
 .navigation a {
-  color: black;
-  display: block;
-  font-weight: bold;
-  padding: 12px 34px;
-  text-decoration: none;
+    color: black;
+    display: block;
+    font-weight: bold;
+    padding: 12px 34px;
+    text-decoration: none;
 }
 
 .active {
-  border-bottom: 3px solid var(--color-orange);
+    border-bottom: 3px solid var(--color-orange);
 }
 
 input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #b3b3b5;
-  color: #444;
-  display: block;
-  font-size: 15px;
-  padding: 3px 0;
-  width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #b3b3b5;
+    color: #444;
+    display: block;
+    font-size: 15px;
+    padding: 3px 0;
+    width: 100%;
 }
 
 label {
-  color: #c2c2c5;
-  display: block;
-  font-size: 13px;
-  margin-bottom: 4px;
+    color: #c2c2c5;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
 }
 
 form {
-  margin-top: 1.2rem;
+    margin-top: 1.2rem;
 }
 
 .field {
-  padding: 22px 0;
+    padding: 22px 0;
 }
 
 .eye {
-  border-bottom: 2px solid #b3b3b5;
+    border-bottom: 2px solid #b3b3b5;
 }

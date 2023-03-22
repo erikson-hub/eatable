@@ -12,8 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   hide = true;
   loginForm = new FormGroup({
-    email: new FormControl('mari@mail.com'),
-    password: new FormControl('maribella'),
+    email: new FormControl('user@mail.com'),
+    password: new FormControl('123456'),
   });
 
   constructor(private authService: AuthService) {}
