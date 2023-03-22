@@ -1,12 +1,12 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .pages {
-  flex-grow: 1;
-  overflow-y: scroll;
+    flex-grow: 1;
+    //overflow-y: scroll;
 }
 
 /* .pages > * {
@@ -14,12 +14,12 @@
 } */
 
 .navbar {
-  height: 63px;
-  flex-shrink: 0;
+    height: 63px;
+    flex-shrink: 0;
 }
 
 @media (min-width: 451px) {
-  .navbar {
-    height: 82px;
-  }
+    .navbar {
+        height: 82px;
+    }
 }
